@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'orix-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })

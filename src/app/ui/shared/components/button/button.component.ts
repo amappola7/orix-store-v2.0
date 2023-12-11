@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'orix-button',
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })
