@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StoreModule } from '@ngrx/store';
+import { darkModeReducer } from './services/dark-mode/dark-mode.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({darkMode: darkModeReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
