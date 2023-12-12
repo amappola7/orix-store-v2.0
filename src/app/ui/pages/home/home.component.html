@@ -1,1 +1,3 @@
-<orix-button [content]="'Screen Mode'"></orix-button>
+<main [ngClass]="screenMode ? 'light-mode' : 'dark-mode'">
+  <orix-button [content]="'Screen Mode'" (clicked)="onChangeScreenMode($event)"></orix-button>
+</main>

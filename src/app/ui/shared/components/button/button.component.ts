@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'orix-button',
@@ -9,9 +9,15 @@ export class ButtonComponent implements OnInit {
   @Input() content!: string;
   @Input() type!: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'quinary';
   @Input() functionality!: 'button' | 'submit' | 'reset';
+  @Output() clicked: EventEmitter<Event> = new EventEmitter<Event>();
 
   ngOnInit() {
     this.type = this.type || 'primary';
     this.functionality = this.functionality || 'button';
+  }
+
+  onClick(event: Event): void {
+    this.clicked.emit(event);
+    event.stopPropagation();
   }
 }
