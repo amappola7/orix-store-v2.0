@@ -14,8 +14,8 @@ import { darkModeReducer } from './services/dark-mode/dark-mode.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule,
-    StoreModule.forRoot({darkMode: darkModeReducer})
+    FontAwesomeModule
+    // StoreModule.forRoot({darkMode: darkModeReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

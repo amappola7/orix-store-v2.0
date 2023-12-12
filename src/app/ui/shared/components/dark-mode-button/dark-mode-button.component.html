@@ -1,1 +1,3 @@
-<p>dark-mode-button works!</p>
+<button type="button" [ngClass]="screenMode ? 'dark-mode' : ''" (click)="onChangeScreenMode($event)">
+  <fa-icon [icon]="screenMode ? icons.lightModeIcon : icons.darkModeIcon"></fa-icon>
+</button>

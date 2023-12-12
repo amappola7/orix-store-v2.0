@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { darkMode, lightMode } from 'src/app/services/dark-mode/dark-mode.actions';
 
 @Component({
   selector: 'orix-home',
@@ -9,20 +8,18 @@ import { darkMode, lightMode } from 'src/app/services/dark-mode/dark-mode.action
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  screenModeStore$!: Observable<boolean>;
+  screenMode$!: Observable<boolean>;
   screenMode!: boolean;
-
   constructor(
-    private store: Store<{darkMode: boolean}>
-  ) {
-    this.screenModeStore$ = store.select('darkMode');
-  }
+    private store: Store<{screenMode: boolean}>
+  ) {}
 
   ngOnInit(): void {
-    this.screenModeStore$.subscribe(mode => this.screenMode = mode);
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
   }
 
-  onChangeScreenMode(event: Event): void {
-    this.store.dispatch(this.screenMode ? darkMode() : lightMode());
+  screenModeChange(): void {
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
   }
 }
