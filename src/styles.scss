@@ -8,6 +8,7 @@ $vivid-pink: #f637e3;
 $hot-pink: #e90364;
 $hot-red: #f11653;
 $orange-red: #fa2c05;
+$font-family: 'League Spartan', sans-serif;
 
 html {
   font-size: 10px;
@@ -21,4 +22,5 @@ html {
 
 button {
   cursor: pointer;
+  font-family: $font-family;
 }
