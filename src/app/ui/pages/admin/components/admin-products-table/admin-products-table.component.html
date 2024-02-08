@@ -1,0 +1,22 @@
+<table class="products-table">
+  <thead>
+    <tr>
+      <th class="image-cell">Image</th>
+      <th class="name-cell">Name</th>
+      <th class="description-cell">Description</th>
+      <th class="price-cell">Price</th>
+      <th class="edit-cell">Edit</th>
+      <th class="delete-cell">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row" *ngFor="let product of productList$ | async ">
+      <td class="cell image-cell"><img class="product-image" [src]="product.image" [alt]="product.name"></td>
+      <td class="cell name-cell">{{product.name}}</td>
+      <td class="cell description-cell">{{product.description}}</td>
+      <td class="cell price-cell">{{product.price | currency:'COP ':'code':'0.0-0'}}</td>
+      <td class="cell edit-cell"><button class="actions-icon"><img class="edit" src="../../../../../../assets/icons/Edit.png" alt="Edit Icon"></button></td>
+      <td class="cell delete-cell"><button class="actions-icon"><img class="delete" src="../../../../../../assets/icons/Trash.png" alt="Trash Icon"></button></td>
+    </tr>
+  </tbody>
+</table>
