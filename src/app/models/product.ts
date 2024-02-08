@@ -1,8 +1,10 @@
-export interface Product {
+export interface RawProductM {
   name: string,
   description: string,
-  image: string,
   price: number,
-  rate: number,
-  category: string
+  image: string
+}
+
+export interface ProductM extends RawProductM {
+  id: number
 }
