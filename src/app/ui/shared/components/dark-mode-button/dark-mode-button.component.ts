@@ -1,6 +1,7 @@
 import { Component,Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb as faLightbulbSolid } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb as faLightbulbRegular } from '@fortawesome/free-regular-svg-icons';
 import { Observable } from 'rxjs';
 import { darkMode, lightMode } from 'src/app/services/dark-mode/dark-mode.actions';
 
@@ -13,8 +14,8 @@ export class DarkModeButtonComponent {
   screenMode$!: Observable<boolean>;
   screenMode: boolean = true;
   icons = {
-    darkModeIcon: faMoon,
-    lightModeIcon: faSun
+    lightModeIcon: faLightbulbSolid,
+    darkModeIcon: faLightbulbRegular
   }
 
   @Output() screenModeChange: EventEmitter<Event> = new EventEmitter();
