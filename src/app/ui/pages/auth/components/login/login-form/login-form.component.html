@@ -1,1 +1,49 @@
-<p>login-form works!</p>
+<div class="log-in__form">
+  <form [formGroup]="loginForm" (click)="onSubmit()">
+    <div class="control-container">
+      <label for="username" class="lbl">Username</label>
+      <input type="text" class="ipt" id="username" formControlName="username" />
+      <div
+        class="errors-list"
+        *ngIf="
+          loginForm.get('username')?.invalid &&
+          (loginForm.get('username')?.dirty ||
+            loginForm.get('username')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="loginForm.get('username')?.hasError('required')"
+        >
+          Username is required</span
+        >
+      </div>
+    </div>
+    <div class="control-container">
+      <label for="password" class="lbl">Password</label>
+      <input
+        type="password"
+        class="ipt"
+        id="password"
+        formControlName="password"
+      />
+      <div
+        class="errors-list"
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="loginForm.get('password')?.hasError('required')"
+        >
+          Password is required</span
+        >
+      </div>
+    </div>
+    <button class="btn">Log in</button>
+    <span class="error-message invalid-credentials" *ngIf="showInvalidCredentialsMessage">Invalid username or password</span>
+  </form>
+</div>

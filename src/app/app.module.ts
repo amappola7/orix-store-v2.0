@@ -10,6 +10,7 @@ import { HomeModule } from './ui/pages/home/home.module';
 import { AuthModule } from './ui/pages/auth/auth.module';
 import { AdminModule } from './ui/pages/admin/admin.module';
 import { ShoppingCartModule } from './ui/pages/shopping-cart/shopping-cart.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
