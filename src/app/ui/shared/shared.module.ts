@@ -26,7 +26,10 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   exports: [
     ButtonComponent,
-    DarkModeButtonComponent
+    DarkModeButtonComponent,
+    NavBarComponent,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
