@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product/product.service';
@@ -10,6 +11,10 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class AdminProductsTableComponent {
   productList$!: Observable<ProductM[]>;
+  icons = {
+    editIcon: faPencil,
+    deleteIcon: faTrash
+  };
 
   constructor(
     private productService: ProductService

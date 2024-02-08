@@ -14,9 +14,9 @@
       <td class="cell image-cell"><img class="product-image" [src]="product.image" [alt]="product.name"></td>
       <td class="cell name-cell">{{product.name}}</td>
       <td class="cell description-cell">{{product.description}}</td>
-      <td class="cell price-cell">{{product.price | currency:'COP ':'code':'0.0-0'}}</td>
-      <td class="cell edit-cell"><button class="actions-icon"><img class="edit" src="../../../../../../assets/icons/Edit.png" alt="Edit Icon"></button></td>
-      <td class="cell delete-cell"><button class="actions-icon"><img class="delete" src="../../../../../../assets/icons/Trash.png" alt="Trash Icon"></button></td>
+      <td class="cell price-cell">{{product.price | currency:'USD'}}</td>
+      <td class="cell edit-cell"><button class="actions-icon"><fa-icon [icon]="icons.editIcon"></fa-icon></button></td>
+      <td class="cell delete-cell"><button class="actions-icon"><fa-icon [icon]="icons.deleteIcon"></fa-icon></button></td>
     </tr>
   </tbody>
 </table>
