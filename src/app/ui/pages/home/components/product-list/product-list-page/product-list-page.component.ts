@@ -16,6 +16,7 @@ export class ProductListPageComponent {
     this.productService.getProducts()
     .subscribe((products) => {
       this.productsList = products;
+      console.log(this.productsList);
     })
   }
 }

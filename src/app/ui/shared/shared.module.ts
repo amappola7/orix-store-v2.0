@@ -9,6 +9,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    HttpClientModule
   ],
   exports: [
     ButtonComponent,
@@ -30,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavBarComponent,
     HeaderComponent,
     FooterComponent,
+    HttpClientModule,
     FontAwesomeModule
   ]
 })
