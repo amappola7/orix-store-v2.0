@@ -1,1 +1,6 @@
-<p>product-list-page works!</p>
+<div class="products-list__container">
+  <orix-product-list-card
+    *ngFor="let product of productsList"
+    [productInfo]="product"
+  ></orix-product-list-card>
+</div>
