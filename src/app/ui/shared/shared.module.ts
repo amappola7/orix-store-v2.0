@@ -16,7 +16,7 @@ import { SharedRoutingModule } from './shared-routing.module';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    StoreModule.forRoot({screenMode: darkModeReducer}),
+    // StoreModule.forRoot({screenMode: darkModeReducer}),
     SharedRoutingModule
   ],
   exports: [

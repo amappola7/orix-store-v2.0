@@ -22,7 +22,8 @@ import { ShoppingCartModule } from './ui/pages/shopping-cart/shopping-cart.modul
     ShoppingCartModule,
     AdminModule,
     AuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({screenMode: darkModeReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
