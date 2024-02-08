@@ -29,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     DarkModeButtonComponent,
     NavBarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FontAwesomeModule
   ]
 })
 export class SharedModule { }
