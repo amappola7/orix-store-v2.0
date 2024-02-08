@@ -9,6 +9,22 @@ $hot-pink: #e90364;
 $hot-red: #f11653;
 $orange-red: #fa2c05;
 $font-family: 'League Spartan', sans-serif;
+$gradient: linear-gradient(90deg, rgba(5,70,255,1) 0%, rgba(92,68,228,1) 22%, rgba(133,20,245,1) 48%, rgba(246,55,227,1) 80%, rgba(233,3,100,1) 100%);
+
+@mixin displayFlex($flex-direction: row, $justify-content, $align-items, $gap: 0, $wrap: wrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin fontColorGradient() {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 html {
   font-size: 10px;

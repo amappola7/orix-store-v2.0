@@ -1,0 +1,14 @@
+@import '../../../../../styles.scss';
+
+button {
+  @include displayFlex(row, center, center);
+  width: 10rem;
+  height: 4rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.8rem;
+
+  .icon {
+    @include fontColorGradient();
+  }
+}
