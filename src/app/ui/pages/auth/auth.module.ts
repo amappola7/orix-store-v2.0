@@ -6,6 +6,7 @@ import { LoginPageComponent } from './components/login/login-page/login-page.com
 import { LoginFormComponent } from './components/login/login-form/login-form.component';
 import { SignupPageComponent } from './components/signup/signup-page/signup-page.component';
 import { SignupFormComponent } from './components/signup/signup-form/signup-form.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { SignupFormComponent } from './components/signup/signup-form/signup-form
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }
