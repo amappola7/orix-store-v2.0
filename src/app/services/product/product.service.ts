@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of, take, tap } from 'rxjs';
 import { ProductM, RawProductM } from 'src/app/models/product';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
