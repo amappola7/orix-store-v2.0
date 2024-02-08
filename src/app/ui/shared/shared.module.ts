@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StoreModule } from '@ngrx/store';
 import { darkModeReducer } from '../../services/dark-mode/dark-mode.reducer';
 import { DarkModeButtonComponent } from './components/dark-mode-button/dark-mode-button.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DarkModeButtonComponent } from './components/dark-mode-button/dark-mode
   imports: [
     CommonModule,
     FontAwesomeModule,
-    StoreModule.forRoot({screenMode: darkModeReducer})
+    StoreModule.forRoot({screenMode: darkModeReducer}),
+    SharedRoutingModule
   ],
   exports: [
     ButtonComponent,
