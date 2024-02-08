@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StoreModule } from '@ngrx/store';
 import { darkModeReducer } from './services/dark-mode/dark-mode.reducer';
+import { HomeModule } from './ui/pages/home/home.module';
+import { AuthModule } from './ui/pages/auth/auth.module';
+import { AdminModule } from './ui/pages/admin/admin.module';
+import { ShoppingCartModule } from './ui/pages/shopping-cart/shopping-cart.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import { darkModeReducer } from './services/dark-mode/dark-mode.reducer';
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    HomeModule,
+    ShoppingCartModule,
+    AdminModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
