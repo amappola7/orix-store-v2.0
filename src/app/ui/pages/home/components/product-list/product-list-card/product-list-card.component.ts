@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faInfo, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ProductM } from 'src/app/models/product';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductM } from 'src/app/models/product';
 export class ProductListCardComponent {
   icons = {
     shoppingCartIcon: faShoppingCart,
-    moreInfoIcon: faInfo
+    moreInfoIcon: faCircleInfo
   };
   @Input() productInfo!: ProductM;
 }

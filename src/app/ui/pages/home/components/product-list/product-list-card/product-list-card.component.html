@@ -1,14 +1,29 @@
-<div>
+<div class="card">
   <div class="card-image__container">
-    <img class="card-image__image" [src]="productInfo.image" [alt]="productInfo.name" [title]="productInfo.name">
+    <img
+      class="card-image__image"
+      [ngClass]="productInfo.name === 'John Hardy Women\'s Legends Naga Gold & Silver Dragon Station Chain Bracelet' ? 'shrink' : ''"
+      [src]="productInfo.image"
+      [alt]="productInfo.name"
+      [title]="productInfo.name"
+    />
   </div>
-  <div class="card-information__container">
-    <h2 class="card-information__name">{{productInfo.name}}</h2>
-  </div>
-  <p class="card-information__price">{{productInfo.price | currency}}</p>
-  <div class="card-information__buttons">
-    <a class="btn card-button" title="See details"><fa-icon [icon]="icons.moreInfoIcon"></fa-icon></a>
-    <button class="btn card-button" title="Add to cart"><fa-icon [icon]="icons.shoppingCartIcon"></fa-icon></button>
+  <div class="card-information">
+    <div class="card-information__container">
+      <h2 class="card-information__name">{{ productInfo.name }}</h2>
+      <p class="card-information__price">{{ productInfo.price | currency }}</p>
+    </div>
+    <div class="card-information__buttons">
+      <a class="btn card-button" title="See details"
+        ><span class="icon"
+          ><fa-icon [icon]="icons.moreInfoIcon"></fa-icon></span
+        ><span>Details</span></a
+      >
+      <button class="btn card-button" title="Add to cart">
+        <span class="icon"
+          ><fa-icon [icon]="icons.shoppingCartIcon"></fa-icon></span
+        ><span>Buy</span>
+      </button>
+    </div>
   </div>
 </div>
-
