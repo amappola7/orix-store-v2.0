@@ -9,4 +9,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   iconMenu: IconDefinition = faBars;
+  screenSize: number = window.screen.width;
+  screenMode: boolean = true;
+  logos = {
+    lightModeLogo: '../../../../../assets/logos/Logo Light Mode.png',
+    darkModeLogo: '../../../../../assets/logos/Logo Dark Mode.png',
+  }
 }
