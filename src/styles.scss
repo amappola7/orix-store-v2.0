@@ -1,17 +1,17 @@
 $light-mode: #ffffff;
 $dark-mode: #0f0f11;
-$bright-blue: #0546ff;
-$indigo-blue: #5c44e4;
-$electric-violet: #8514f5;
-$french-violet: #8001c6;
-$vivid-pink: #f637e3;
-$hot-pink: #e90364;
-$hot-red: #f11653;
-$orange-red: #fa2c05;
-$font-family: 'League Spartan', sans-serif;
-$gradient: linear-gradient(90deg, rgba(5,70,255,1) 0%, rgba(92,68,228,1) 22%, rgba(133,20,245,1) 48%, rgba(246,55,227,1) 80%, rgba(233,3,100,1) 100%);
+$grey-color: #6e6e73;
+$grey-color-variation: #e2e2e4;
+$box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+$font-family: "League Spartan", sans-serif;
 
-@mixin displayFlex($flex-direction: row, $justify-content, $align-items, $gap: 0, $wrap: wrap) {
+@mixin displayFlex(
+  $flex-direction: row,
+  $justify-content,
+  $align-items,
+  $gap: 0,
+  $wrap: wrap
+) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
@@ -20,10 +20,22 @@ $gradient: linear-gradient(90deg, rgba(5,70,255,1) 0%, rgba(92,68,228,1) 22%, rg
   flex-wrap: $wrap;
 }
 
-@mixin fontColorGradient() {
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@mixin tabletQueries {
+  @media screen and (min-width: 768px){
+    @content;
+  }
+}
+
+@mixin desktopQueries {
+  @media screen and (min-width: 1080px){
+    @content;
+  }
+}
+
+@mixin desktopPlusQueries {
+  @media screen and (min-width: 1440px){
+    @content;
+  }
 }
 
 html {

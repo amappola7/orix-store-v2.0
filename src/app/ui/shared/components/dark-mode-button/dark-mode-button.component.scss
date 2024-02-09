@@ -7,8 +7,4 @@ button {
   border: none;
   border-radius: 2rem;
   font-size: 1.8rem;
-
-  .icon {
-    @include fontColorGradient();
-  }
 }
