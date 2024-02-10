@@ -1,0 +1,16 @@
+@import '../../../../../../styles.scss';
+
+.welcome-banner__content {
+  color: white;
+
+  span {
+    color: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: white;
+  }
+
+  // button {
+  //   color: $enfasis-color;
+  //   background-color: $main-color;
+  // }
+}

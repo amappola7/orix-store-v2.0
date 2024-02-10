@@ -8,6 +8,7 @@ import { ProductDetailsPageComponent } from './components/product-details/produc
 import { ProductDetailsCardComponent } from './components/product-details/product-details-card/product-details-card.component';
 import { ProductListPageComponent } from './components/product-list/product-list-page/product-list-page.component';
 import { ProductListCardComponent } from './components/product-list/product-list-card/product-list-card.component';
+import { WelcomeBannerComponent } from './components/welcome-banner/welcome-banner.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductListCardComponent } from './components/product-list/product-list
     ProductListPageComponent,
     ProductListCardComponent,
     ProductDetailsPageComponent,
-    ProductDetailsCardComponent
+    ProductDetailsCardComponent,
+    WelcomeBannerComponent
   ],
   imports: [
     CommonModule,

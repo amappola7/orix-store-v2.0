@@ -42,6 +42,10 @@ $animation: all .3s cubic-bezier(0,0,.5,1);
   }
 }
 
+@mixin heightCalc($measure) {
+  height: calc($measure - 6rem);
+}
+
 html {
   font-size: 10px;
   font-family: $font-family;
