@@ -2,12 +2,11 @@
 
 .card {
   @include displayFlex(column, flex-start, center);
-  width: 80%;
+  width: 32rem;
   height: 48rem;
   padding: 1.5rem;
   border-radius: $border-radius;
   background-color: $light-mode;
-  margin-bottom: 2rem;
   box-shadow: $box-shadow;
 
   .card-image__container {

@@ -1,0 +1,6 @@
+@import "../../../../../../../styles.scss";
+
+.products-list__container {
+  @include displayFlex(column, flex-start, center, 3rem);
+  width: 100%;
+}
