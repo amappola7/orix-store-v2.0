@@ -1,7 +1,13 @@
+@import '../../../../styles.scss';
+
 .home {
   width: 100vw;
   max-width: 100vw;
-  padding: 2.5rem;
+
+  .welcome-banner {
+    width: 100%;
+    @include heightCalc(100vh);
+  }
 }
 
 .light-mode {
