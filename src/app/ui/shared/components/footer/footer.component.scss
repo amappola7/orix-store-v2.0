@@ -1,0 +1,19 @@
+@import "../../../../../styles.scss";
+
+.footer-container {
+  @include displayFlex(row, center, center);
+
+  .footer {
+    @include displayFlex(row, center, center, 2rem);
+    width: 87%;
+    height: 6rem;
+    padding: 0.5rem;
+    border-radius: $border-radius-small;
+    background-color: $dark-mode;
+
+    p {
+      color: $light-mode;
+      font-size: 1.8rem;
+    }
+  }
+}

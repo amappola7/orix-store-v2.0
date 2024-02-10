@@ -2,9 +2,11 @@ $light-mode: #ffffff;
 $dark-mode: #0f0f11;
 $grey-color: #6e6e73;
 $grey-color-variation: #e2e2e4;
+$light-grey: #f1f1f1;
 $box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
 $font-family: "League Spartan", sans-serif;
 $border-radius: 2rem;
+$border-radius-small: 0.5rem;
 $animation: all .3s cubic-bezier(0,0,.5,1);
 
 @mixin displayFlex(
