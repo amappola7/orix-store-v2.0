@@ -1,0 +1,20 @@
+@import "../../../../../styles.scss";
+
+@include desktopQueries {
+  .nav-bar {
+    ul {
+      @include displayFlex(row, flex-end, center, 1.5rem);
+      height: 100%;
+
+      li {
+        list-style: none;
+        font-size: 1.4rem;
+
+        a {
+          text-decoration: none;
+          color: $dark-mode;
+        }
+      }
+    }
+  }
+}
