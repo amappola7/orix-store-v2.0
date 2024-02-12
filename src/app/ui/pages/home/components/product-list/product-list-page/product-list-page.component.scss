@@ -3,4 +3,5 @@
 .products-list__container {
   @include displayFlex(column, flex-start, center, 3rem);
   width: 100%;
+  padding: 3rem 0;
 }

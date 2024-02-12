@@ -1,0 +1,10 @@
+@import "../../../../../../../styles.scss";
+
+@include desktopQueries() {
+  .products-list__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding: 2rem 0 3rem;
+  }
+}

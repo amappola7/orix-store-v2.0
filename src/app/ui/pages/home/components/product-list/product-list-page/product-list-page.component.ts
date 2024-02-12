@@ -5,7 +5,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 @Component({
   selector: 'orix-product-list-page',
   templateUrl: './product-list-page.component.html',
-  styleUrl: './product-list-page.component.scss'
+  styleUrls: ['./product-list-page.component.scss' , './product-list-page-desktop.component.scss']
 })
 export class ProductListPageComponent {
   productsList: ProductM[] = [];
