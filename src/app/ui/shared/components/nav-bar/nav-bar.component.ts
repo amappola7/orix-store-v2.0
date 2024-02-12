@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,4 +9,5 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavBarComponent {
   cartIcon: IconDefinition = faShoppingCart
+  @Input() currentPage!: string;
 }
