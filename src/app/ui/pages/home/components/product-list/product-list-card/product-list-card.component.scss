@@ -62,6 +62,8 @@
         @include displayFlex(row, center, center, 0.5rem);
         height: 100%;
         font-size: 1.8rem;
+        color: black;
+        text-decoration: none;
 
         .icon {
           font-size: 1.6rem;

@@ -14,7 +14,7 @@
       <p class="card-information__price">{{ productInfo.price | currency }}</p>
     </div>
     <div class="card-information__buttons">
-      <a class="btn card-button" title="See details"
+      <a class="btn card-button" title="See details" routerLink="details/{{productInfo.id}}"
         ><span class="icon"
           ><fa-icon [icon]="icons.moreInfoIcon"></fa-icon></span
         ><span>Details</span></a
