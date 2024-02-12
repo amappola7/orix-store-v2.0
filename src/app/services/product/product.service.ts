@@ -25,27 +25,45 @@ export class ProductService {
     )
   }
 
+  // getProductById(id: number): Observable<ProductM | null> {
+  //   if (this.authService.userIsAuthenticated() && (this.authService.getUserRole() === 'admin' || this.authService.getUserRole() === 'user')) {
+  //     return this.http.get<ProductM>(`${this._url}/${id}`).pipe(
+  //       take(1),
+  //       catchError((error) => {
+  //         alert('Product not found');
+  //         const voidProduct: ProductM = {
+  //           id: 0,
+  //           name: '',
+  //           description: '',
+  //           price: 0,
+  //           image: ''
+  //         };
+  //         console.log('Error getting product', error);
+  //         return of(voidProduct);
+  //       })
+  //     )
+  //   } else {
+  //     alert('You don\'t have access to see product details, please log in');
+  //     return of(null);
+  //   }
+  // }
+
   getProductById(id: number): Observable<ProductM | null> {
-    if (this.authService.userIsAuthenticated() && (this.authService.getUserRole() === 'admin' || this.authService.getUserRole() === 'user')) {
-      return this.http.get<ProductM>(`${this._url}/${id}`).pipe(
-        take(1),
-        catchError((error) => {
-          alert('Product not found');
-          const voidProduct: ProductM = {
-            id: 0,
-            name: '',
-            description: '',
-            price: 0,
-            image: ''
-          };
-          console.log('Error getting product', error);
-          return of(voidProduct);
-        })
-      )
-    } else {
-      alert('You don\'t have access to see product details, please log in');
-      return of(null);
-    }
+    return this.http.get<ProductM>(`${this._url}/${id}`).pipe(
+      take(1),
+      catchError((error) => {
+        alert('Product not found');
+        const voidProduct: ProductM = {
+          id: 0,
+          name: '',
+          description: '',
+          price: 0,
+          image: ''
+        };
+        console.log('Error getting product', error);
+        return of(voidProduct);
+      })
+    )
 
   }
 

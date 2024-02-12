@@ -1,0 +1,10 @@
+@import '../../../../../../../styles.scss';
+
+.product-details__page {
+  width: 100vw;
+
+  .product-details__card {
+    width: 100%;
+    @include heightCalcNoHeader(100vh);
+  }
+}

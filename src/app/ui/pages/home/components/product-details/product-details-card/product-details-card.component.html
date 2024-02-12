@@ -1,1 +1,20 @@
-<p>product-details-card works!</p>
+<div class="product-details__card">
+  <div class="product-image">
+    <img [src]="(productInfo$ | async)?.image" [alt]="(productInfo$ | async)?.name">
+  </div>
+  <div class="product-info">
+    <h2 class="product-info__name">{{(productInfo$ | async)?.name}}</h2>
+    <p class="product-info__description">{{(productInfo$ | async)?.description}}</p>
+    <p class="product-info__price">{{(productInfo$ | async)?.price | currency}}</p>
+    <span class="product-info__buttons">
+      <button class="btn quantity"><fa-icon [icon]="icons.remove"></fa-icon></button>
+      <p>1</p>
+      <button class="btn quantity"><fa-icon [icon]="icons.add"></fa-icon></button>
+      <button class="btn add-to-cart" title="Add to cart">
+        <span class="icon"
+          ><fa-icon [icon]="icons.shoppingCart"></fa-icon></span
+        ><span>Add</span>
+      </button>
+    </span>
+  </div>
+</div>

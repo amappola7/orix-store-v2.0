@@ -42,8 +42,12 @@ $animation: all .3s cubic-bezier(0,0,.5,1);
   }
 }
 
-@mixin heightCalc($measure) {
+@mixin heightCalcNoHeader($measure) {
   height: calc($measure - 6rem);
+}
+
+@mixin heightCalcNoHeaderNoFooter($measure) {
+  height: calc($measure - 6rem - 6rem);
 }
 
 html {
