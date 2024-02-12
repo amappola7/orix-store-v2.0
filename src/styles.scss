@@ -49,6 +49,7 @@ $animation: all .3s cubic-bezier(0,0,.5,1);
 html {
   font-size: 10px;
   font-family: $font-family;
+  scroll-behavior: smooth;
 }
 
 * {
