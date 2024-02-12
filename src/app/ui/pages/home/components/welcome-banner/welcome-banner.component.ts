@@ -5,7 +5,7 @@ import { faAnglesDown, faArrowDownLong } from '@fortawesome/free-solid-svg-icons
 @Component({
   selector: 'orix-welcome-banner',
   templateUrl: './welcome-banner.component.html',
-  styleUrl: './welcome-banner.component.scss'
+  styleUrls: ['./welcome-banner.component.scss', './welcome-banner-desktop.component.scss']
 })
 export class WelcomeBannerComponent {
   arrowIcon: IconDefinition = faAnglesDown;
