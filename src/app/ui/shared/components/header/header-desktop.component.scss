@@ -1,0 +1,7 @@
+@import "../../../../../styles.scss";
+
+@include desktopQueries() {
+  .header {
+    background-color: #000000;
+  }
+}
