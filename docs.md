@@ -7,7 +7,9 @@
 
 ## Architecture
 
-This is a project automatically generated with the Angular CLI, because of that, you will found the common Angular structure with some additions:
+This is a project automatically generated with the Angular CLI, because of that, you will found the common Angular structure with additions founded in the next sections.
+
+![Orix Store Architecture](./src/assets/Orix%20Store%20Architecture.png)
 
 You can found an updated scheme of the architecture [here](https://www.figma.com/file/xFcw4HI8WOpOfo2LDPoZVk/Orix-Store-Architecture?type=whiteboard&node-id=0%3A1&t=0iqyfJDgEc8tOGkk-1).
 
@@ -21,11 +23,17 @@ The services directory contains all the injectable classes that are used to inte
 The ui directory contains the components used to build the interface of the project. It is divided in two main parts:
 #### 3.1 Shared `src\app\ui\shared`
 This folder is responsible for components, directives and pipes shared across different modules of the application.
-#### 3.1 Components `src\app\ui\components`
-This folder contains larger independent components that make up the user interface.
+#### 3.1 Components `src\app\ui\pages`
+This folder contains larger independent modular components that make up the user interface.
 
 ### 4. Utils `src\app\utils`
 The utils directory contains adittional functions that are reused in several parts of the project and provide help with certain functionalities.
+
+### 5. Guards `src\app\guards`
+In the guards directory, you will found the guards used to protect the routes of the app.
+
+### 6. Interceptors `src\app\interceptors`
+In the interceptors directory, you will found the interceptors used to modify HTTP requests.
 
 ## Additional information
 - This project use as backend server a JSON Server API, run `json-server --watch db.json` in your terminal to initialize it.
