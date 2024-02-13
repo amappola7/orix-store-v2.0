@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 @Component({
   selector: 'orix-product-details-card',
   templateUrl: './product-details-card.component.html',
-  styleUrl: './product-details-card.component.scss'
+  styleUrls: ['./product-details-card.component.scss', './product-details-card-desktop.component.scss']
 })
 export class ProductDetailsCardComponent implements OnInit {
   productInfo$!: Observable<ProductM | null>;
