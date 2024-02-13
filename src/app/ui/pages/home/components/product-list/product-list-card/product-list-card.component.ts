@@ -5,7 +5,7 @@ import { ProductM } from 'src/app/models/product';
 @Component({
   selector: 'orix-product-list-card',
   templateUrl: './product-list-card.component.html',
-  styleUrl: './product-list-card.component.scss'
+  styleUrls: ['./product-list-card.component.scss', './product-list-card-desktop.component.scss']
 })
 export class ProductListCardComponent {
   icons = {
