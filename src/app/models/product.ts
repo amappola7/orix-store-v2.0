@@ -3,6 +3,7 @@ export interface RawProductM {
   description: string,
   price: number,
   image: string
+  category: string
 }
 
 export interface ProductM extends RawProductM {

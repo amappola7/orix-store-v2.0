@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 @Component({
   selector: 'orix-admin-products-table',
   templateUrl: './admin-products-table.component.html',
-  styleUrl: './admin-products-table.component.scss'
+  styleUrls: ['./admin-products-table.component.scss', './admin-products-table-desktop.component.scss']
 })
 export class AdminProductsTableComponent {
   productList$!: Observable<ProductM[]>;
@@ -15,6 +15,7 @@ export class AdminProductsTableComponent {
     editIcon: faPencil,
     deleteIcon: faTrash
   };
+  screenSize: number = window.screen.width;
 
   constructor(
     private productService: ProductService

@@ -1,22 +1,46 @@
 <table class="products-table">
   <thead>
     <tr>
-      <th class="image-cell">Image</th>
-      <th class="name-cell">Name</th>
-      <th class="description-cell">Description</th>
-      <th class="price-cell">Price</th>
-      <th class="edit-cell">Edit</th>
-      <th class="delete-cell">Delete</th>
+      <th class="td-image" *ngIf="screenSize > 768">Image</th>
+      <th class="td-name">Name</th>
+      <th class="td-description" *ngIf="screenSize > 768">Description</th>
+      <th class="td-category" *ngIf="screenSize > 768">Category</th>
+      <th class="td-price" *ngIf="screenSize > 768">Price</th>
+      <th class="td-options">Options</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="row" *ngFor="let product of productList$ | async ">
-      <td class="cell image-cell"><img class="product-image" [src]="product.image" [alt]="product.name"></td>
-      <td class="cell name-cell">{{product.name}}</td>
-      <td class="cell description-cell">{{product.description}}</td>
-      <td class="cell price-cell">{{product.price | currency:'USD'}}</td>
-      <td class="cell edit-cell"><button class="actions-icon"><fa-icon [icon]="icons.editIcon"></fa-icon></button></td>
-      <td class="cell delete-cell"><button class="actions-icon"><fa-icon [icon]="icons.deleteIcon"></fa-icon></button></td>
+    <tr *ngFor="let product of productList$ | async">
+      <td class="td td-image" *ngIf="screenSize > 768">
+        <div class="image-container">
+          <span
+            ><img
+              [src]="product.image"
+              [alt]="product.name"
+              [title]="product.name"
+          /></span>
+        </div>
+      </td>
+      <td class="td td-name">{{ product.name }}</td>
+      <td class="td td-description" *ngIf="screenSize > 768">
+        {{ product.description }}
+      </td>
+      <td class="td td-category" *ngIf="screenSize > 768">
+        {{ product.category }}
+      </td>
+      <td class="td td-price" *ngIf="screenSize > 768">
+        {{ product.price | currency }}
+      </td>
+      <td class="td td-options">
+        <div class="td-options__container">
+          <button class="btn edit-icon">
+            <fa-icon [icon]="icons.editIcon"></fa-icon>
+          </button>
+          <button class="btn delete-icon">
+            <fa-icon [icon]="icons.deleteIcon"></fa-icon>
+          </button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

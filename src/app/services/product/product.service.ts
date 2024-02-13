@@ -58,7 +58,8 @@ export class ProductService {
           name: '',
           description: '',
           price: 0,
-          image: ''
+          image: '',
+          category: ''
         };
         console.log('Error getting product', error);
         return of(voidProduct);
