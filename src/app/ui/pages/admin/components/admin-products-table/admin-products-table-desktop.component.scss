@@ -1,76 +1,24 @@
 @import "../../../../../../styles.scss";
 
 @include desktopQueries() {
-  .products-table {
-    width: 90%;
-    border-spacing: 0 1.5rem;
+  .admin-table__container {
+    .products-table {
+      width: 90%;
+      border-spacing: 0 1.5rem;
 
-    thead {
-      height: 6rem;
-
-      .td-image {
-        width: 10%;
-      }
-
-      .td-name {
-        width: 15%;
-      }
-
-      .td-description {
-        width: 50%;
-      }
-
-      .td-category {
-        width: 15%;
-      }
-
-      .td-price {
-        width: 10%;
-      }
-
-      .td-options {
-        width: 10%;
-      }
-    }
-
-    tbody {
-      tr {
-        .td {
-          text-align: center;
-          padding: 1.5rem;
-        }
+      thead {
+        height: 6rem;
 
         .td-image {
           width: 10%;
-
-          .image-container {
-            @include displayFlex(row, center, center);
-            width: 100%;
-            height: 100%;
-
-            span {
-              @include displayFlex(row, center, center);
-              width: 8rem;
-              height: 8rem;
-              background-color: white;
-              border-radius: 4rem;
-              overflow: hidden;
-              object-fit: cover;
-
-              img {
-                width: 75%;
-              }
-            }
-          }
         }
 
         .td-name {
-          width: 15%;
+          width: 20%;
         }
 
         .td-description {
-          text-align: start;
-          width: 50%;
+          width: 35%;
         }
 
         .td-category {
@@ -82,10 +30,64 @@
         }
 
         .td-options {
-          width: 10%;
+          width: 20%;
+        }
+      }
 
-          .td-options__container {
-            @include displayFlex(row, center, center, 1.5rem);
+      tbody {
+        tr {
+          .td {
+            text-align: center;
+            padding: 1.5rem;
+          }
+
+          .td-image {
+            width: 10%;
+
+            .image-container {
+              @include displayFlex(row, center, center);
+              width: 100%;
+              height: 100%;
+
+              span {
+                @include displayFlex(row, center, center);
+                width: 8rem;
+                height: 8rem;
+                background-color: white;
+                border-radius: 4rem;
+                overflow: hidden;
+                object-fit: cover;
+
+                img {
+                  width: 75%;
+                }
+              }
+            }
+          }
+
+          .td-name {
+            width: 20%;
+          }
+
+          .td-description {
+            text-align: start;
+            width: 35%;
+          }
+
+          .td-category {
+            width: 15%;
+          }
+
+          .td-price {
+            width: 10%;
+          }
+
+          .td-options {
+            width: 20%;
+
+            .td-options__container {
+              @include displayFlex(row, center, center, 1.5rem);
+            }
           }
         }
       }
