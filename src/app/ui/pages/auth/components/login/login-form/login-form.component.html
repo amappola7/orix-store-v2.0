@@ -1,8 +1,16 @@
-<div class="log-in__form">
-  <form [formGroup]="loginForm" (click)="onSubmit()">
+<div class="login__form-container">
+  <form class="login__form" [formGroup]="loginForm" (click)="onSubmit()">
+    <h2>Login</h2>
     <div class="control-container">
-      <label for="username" class="lbl">Username</label>
-      <input type="text" class="ipt" id="username" formControlName="username" />
+      <div class="control-container__inputs">
+        <label for="username" class="lbl">Username</label>
+        <input
+          type="text"
+          class="ipt"
+          id="username"
+          formControlName="username"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -20,13 +28,15 @@
       </div>
     </div>
     <div class="control-container">
-      <label for="password" class="lbl">Password</label>
-      <input
-        type="password"
-        class="ipt"
-        id="password"
-        formControlName="password"
-      />
+      <div class="control-container__inputs">
+        <label for="password" class="lbl">Password</label>
+        <input
+          type="password"
+          class="ipt"
+          id="password"
+          formControlName="password"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -43,7 +53,11 @@
         >
       </div>
     </div>
-    <button class="btn">Log in</button>
-    <span class="error-message invalid-credentials" *ngIf="showInvalidCredentialsMessage">Invalid username or password</span>
+    <button class="btn form-button">Log in</button>
+    <span
+      class="error-message invalid-credentials"
+      *ngIf="showInvalidCredentialsMessage"
+      >Invalid username or password</span
+    >
   </form>
 </div>

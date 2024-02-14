@@ -1,0 +1,6 @@
+@import "../../../../../../../styles.scss";
+
+.auth-page {
+  width: 100vw;
+  @include heightCalcNoHeaderNoFooter(100vh);
+}

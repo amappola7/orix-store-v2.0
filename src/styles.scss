@@ -73,3 +73,32 @@ html {
   cursor: pointer;
   background-color: transparent;
 }
+
+.lbl {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.ipt {
+  height: 3.2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-family: $font-family;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000000;
+  outline: none;
+  border: solid 0.1rem $grey-color-variation;
+}
+
+.form-button {
+  height: 3.5rem;
+  padding: 0 2rem;
+  border-radius: $border-radius-small;
+  font-size: 1.8rem;
+  color: #000000;
+  background-color: $light-grey;
+  box-shadow: $box-shadow-variation;
+}
