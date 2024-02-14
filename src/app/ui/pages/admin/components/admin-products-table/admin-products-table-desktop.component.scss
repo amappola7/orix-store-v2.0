@@ -6,18 +6,18 @@
     border-spacing: 0 1.5rem;
 
     thead {
-      height: 5rem;
+      height: 6rem;
 
       .td-image {
         width: 10%;
       }
 
       .td-name {
-        width: 25%;
+        width: 15%;
       }
 
       .td-description {
-        width: 30%;
+        width: 50%;
       }
 
       .td-category {
@@ -65,12 +65,12 @@
         }
 
         .td-name {
-          width: 25%;
+          width: 15%;
         }
 
         .td-description {
           text-align: start;
-          width: 30%;
+          width: 50%;
         }
 
         .td-category {

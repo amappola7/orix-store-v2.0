@@ -1,62 +1,67 @@
 @import "../../../../../../styles.scss";
 
-.products-table {
-  width: 90%;
-  border-spacing: 0 1rem;
-  color: #000000;
-  font-size: 1.8rem;
+.admin-table__container {
+  @include displayFlex(row, center, flex-start);
+  width: 100%;
 
-  .td-name {
-    width: 65%;
-  }
+  .products-table {
+    width: 90%;
+    border-spacing: 0 1rem;
+    color: #000000;
+    font-size: 1.8rem;
 
-  .td-options {
-    width: 35%;
-  }
-
-  thead {
-    height: 4.2rem;
-    border-radius: 1.05rem;
-    box-shadow: $box-shadow;
-    font-size: 2rem;
-
-    th {
-      font-weight: 600;
+    .td-name {
+      width: 65%;
     }
-  }
 
-  tbody {
-    tr {
-      border-radius: 1rem;
+    .td-options {
+      width: 35%;
+    }
+
+    thead {
+      height: 4.2rem;
+      border-radius: 1.05rem;
       box-shadow: $box-shadow;
+      font-size: 2rem;
 
-      .td-name {
-        height: 7.5rem;
-        padding: 1.5rem 0 1.5rem 1.5rem;
+      th {
+        font-weight: 600;
       }
+    }
 
-      .td-options {
-        .td-options__container {
-          @include displayFlex(row, center, center, 1rem);
+    tbody {
+      tr {
+        border-radius: 1rem;
+        box-shadow: $box-shadow;
+
+        .td-name {
+          height: 7.5rem;
+          padding: 1.5rem 0 1.5rem 1.5rem;
         }
 
-        button {
-          width: fit-content;
-          height: fit-content;
-          padding: 0;
-          color: $grey-color;
-          font-size: 2rem;
-          background-color: transparent;
-          box-shadow: none;
+        .td-options {
+          .td-options__container {
+            @include displayFlex(row, center, center, 1rem);
+          }
+
+          button {
+            width: fit-content;
+            height: fit-content;
+            padding: 0;
+            color: $grey-color;
+            font-size: 2rem;
+            background-color: transparent;
+            box-shadow: none;
+          }
+
+          // button:hover {
+          //   color: $main-color;
+          // }
+
+          // button:active {
+          //   color: $grey-variation;
+          // }
         }
-
-        // button:hover {
-        //   color: $main-color;
-        // }
-
-        // button:active {
-        //   color: $grey-variation;
-        // }
       }
     }
   }

@@ -1,0 +1,6 @@
+@import '../../../../styles.scss';
+
+.admin-table {
+  @include displayFlex(column, flex-start, center);
+  width: 100%;
+}
