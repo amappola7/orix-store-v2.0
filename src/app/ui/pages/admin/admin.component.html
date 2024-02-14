@@ -1,9 +1,12 @@
 <orix-header></orix-header>
 <section class="admin-table">
+  <div class="create-product__container">
+    <h2>Products</h2>
+    <button class="create-product__button" (click)="openModal('create')">Create Product</button>
+  </div>
   <orix-admin-products-table (openModalNotification)="openModal($event)"></orix-admin-products-table>
 </section>
 <orix-footer></orix-footer>
-
 <div class="modal__container" *ngIf="modalMode">
   <orix-modal-container (closeModalNotification)="closeModal()"></orix-modal-container>
 </div>
