@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
@@ -17,11 +17,17 @@ export class AdminProductsTableComponent {
   };
   screenSize: number = window.screen.width;
 
+  @Output() openModalNotification: EventEmitter<string> = new EventEmitter();
+
   constructor(
     private productService: ProductService
   ) {}
 
   ngOnInit(): void {
     this.productList$ = this.productService.getProducts();
+  }
+
+  openModal(actionInfo: string): void {
+    this.openModalNotification.emit(actionInfo);
   }
 }

@@ -1,6 +1,6 @@
 <div class="modal-background">
   <div class="close-modal__button-container">
-    <button><fa-icon [icon]="closeModalIcon"></fa-icon></button>
+    <button class="close-modal__button" (click)="closeModal()"><fa-icon [icon]="closeModalIcon"></fa-icon></button>
   </div>
   <div class="modal-content__container">
     <ng-container #modalContent></ng-container>

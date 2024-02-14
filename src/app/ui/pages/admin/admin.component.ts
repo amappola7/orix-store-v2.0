@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
+  modalMode: boolean = false;
+
+  openModal(actionInfo: string): void {
+    this.modalMode = true;
+  }
+
+  closeModal(): void {
+    this.modalMode = false;
+  }
 }

@@ -1,5 +1,9 @@
 <orix-header></orix-header>
 <section class="admin-table">
-  <orix-admin-products-table></orix-admin-products-table>
+  <orix-admin-products-table (openModalNotification)="openModal($event)"></orix-admin-products-table>
 </section>
 <orix-footer></orix-footer>
+
+<div class="modal__container" *ngIf="modalMode">
+  <orix-modal-container (closeModalNotification)="closeModal()"></orix-modal-container>
+</div>

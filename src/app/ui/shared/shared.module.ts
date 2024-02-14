@@ -36,7 +36,8 @@ import { ModalContainerComponent } from './components/modal-container/modal-cont
     FooterComponent,
     HttpClientModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalContainerComponent
   ]
 })
 export class SharedModule { }
