@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'orix-login-form',
   templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.scss'
+  styleUrls: ['./login-form.component.scss', './login-form-desktop.component.scss']
 })
 export class LoginFormComponent {
   loginForm!: FormGroup;
