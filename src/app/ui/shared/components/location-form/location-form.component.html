@@ -1,0 +1,68 @@
+<form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+  <div class="control-container">
+    <label class="lbl" for="country">Country</label>
+    <select class="ipt" name="country" id="country" formControlName="country">
+      <option value="">---</option>
+      <option *ngFor="let country of countriesList" [value]="country.name">
+        {{ country.name }}
+      </option>
+    </select>
+    <div
+    class="errors-list"
+    *ngIf="
+      locationForm.get('country')?.invalid &&
+      (locationForm.get('country')?.dirty || locationForm.get('country')?.touched)
+    "
+  >
+    <span
+      class="error-message"
+      *ngIf="locationForm.get('country')?.hasError('required')"
+      >Country is required</span
+    >
+  </div>
+  </div>
+  <div class="control-container">
+    <label class="lbl" for="state">State</label>
+    <select class="ipt" name="state" id="state" formControlName="state">
+      <option value="">---</option>
+      <option *ngFor="let state of statesList" [value]="state.name">
+        {{ state.name }}
+      </option>
+    </select>
+    <div
+    class="errors-list"
+    *ngIf="
+      locationForm.get('state')?.invalid &&
+      (locationForm.get('state')?.dirty || locationForm.get('state')?.touched)
+    "
+  >
+    <span
+      class="error-message"
+      *ngIf="locationForm.get('state')?.hasError('required')"
+      >State is required</span
+    >
+  </div>
+  </div>
+  <div class="control-container">
+    <label class="lbl" for="city">City</label>
+    <select class="ipt" name="city" id="city" formControlName="city">
+      <option value="">---</option>
+      <option *ngFor="let city of citiesList" [value]="city.name">
+        {{ city.name }}
+      </option>
+    </select>
+    <div
+      class="errors-list"
+      *ngIf="
+        locationForm.get('city')?.invalid &&
+        (locationForm.get('city')?.dirty || locationForm.get('city')?.touched)
+      "
+    >
+      <span
+        class="error-message"
+        *ngIf="locationForm.get('city')?.hasError('required')"
+        >City is required</span
+      >
+    </div>
+  </div>
+</form>

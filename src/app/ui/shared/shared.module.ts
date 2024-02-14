@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalContainerComponent } from './components/modal-container/modal-container.component';
+import { LocationFormComponent } from './components/location-form/location-form.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ModalContainerComponent } from './components/modal-container/modal-cont
     NavBarComponent,
     HeaderComponent,
     FooterComponent,
-    ModalContainerComponent
+    ModalContainerComponent,
+    LocationFormComponent
   ],
   imports: [
     CommonModule,
