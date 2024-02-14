@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalContainerComponent } from './components/modal-container/modal-container.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DarkModeButtonComponent,
     NavBarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ModalContainerComponent
   ],
   imports: [
     CommonModule,
