@@ -1,0 +1,38 @@
+@import "../../../../../../../styles.scss";
+
+@include desktopQueries() {
+  .signup__form-container {
+    .signup__form {
+      @include displayFlex(column, center, center, 1.5rem);
+      width: 60rem;
+      min-height: 60rem;
+      height: fit-content;
+
+      .control-container {
+        @include displayFlex(row, center, center);
+        width: 100%;
+
+        .control-container__inputs {
+          @include displayFlex(row, center, center, 1rem);
+          width: 80%;
+
+          .lbl {
+            width: 30%;
+          }
+
+          .ipt {
+            width: calc(70% - 1rem);
+          }
+        }
+
+        .errors-list {
+          width: 100%;
+          margin-top: 0.5rem;
+          color: $grey-color;
+          font-size: 1.6rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

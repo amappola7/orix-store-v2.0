@@ -1,0 +1,9 @@
+@import "../../../../../../../styles.scss";
+
+@include desktopQueries() {
+  .auth-page {
+    @include displayFlex(column, center, center);
+    width: 98.9vw;
+    min-height: calc(100vh - 6rem);
+  }
+}

@@ -1,8 +1,16 @@
-<div class="sign-up__form">
-  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+<div class="signup__form-container">
+  <form class="signup__form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <h2>Signup</h2>
     <div class="username__control control-container">
-      <label class="lbl" for="username">Username</label>
-      <input class="ipt" id="username" formControlName="username" type="text" />
+      <div class="control-container__inputs">
+        <label class="lbl" for="username">Username</label>
+        <input
+          class="ipt"
+          id="username"
+          formControlName="username"
+          type="text"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -24,13 +32,15 @@
       </div>
     </div>
     <div class="first-name__control control-container">
-      <label class="lbl" for="firstName">First Name</label>
-      <input
-        class="ipt"
-        id="firstName"
-        formControlName="firstName"
-        type="text"
-      />
+      <div class="control-container__inputs">
+        <label class="lbl" for="firstName">First Name</label>
+        <input
+          class="ipt"
+          id="firstName"
+          formControlName="firstName"
+          type="text"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -57,13 +67,15 @@
       </div>
     </div>
     <div class="second-name__control control-container">
-      <label class="lbl" for="secondName">Second Name</label>
-      <input
-        class="ipt"
-        id="secondName"
-        formControlName="secondName"
-        type="text"
-      />
+      <div class="control-container__inputs">
+        <label class="lbl" for="secondName">Second Name</label>
+        <input
+          class="ipt"
+          id="secondName"
+          formControlName="secondName"
+          type="text"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -85,8 +97,10 @@
       </div>
     </div>
     <div class="surname__control control-container">
-      <label class="lbl" for="surname">Surname</label>
-      <input class="ipt" id="surname" formControlName="surname" type="text" />
+      <div class="control-container__inputs">
+        <label class="lbl" for="surname">Surname</label>
+        <input class="ipt" id="surname" formControlName="surname" type="text" />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -113,13 +127,15 @@
       </div>
     </div>
     <div class="second-surname__control control-container">
-      <label class="lbl" for="secondSurname">Second Surname</label>
-      <input
-        class="ipt"
-        id="secondSurname"
-        formControlName="secondSurname"
-        type="text"
-      />
+      <div class="control-container__inputs">
+        <label class="lbl" for="secondSurname">Second Surname</label>
+        <input
+          class="ipt"
+          id="secondSurname"
+          formControlName="secondSurname"
+          type="text"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -141,8 +157,10 @@
       </div>
     </div>
     <div class="email__control control-container">
-      <label class="lbl" for="email">Email</label>
-      <input class="ipt" id="email" formControlName="email" type="email" />
+      <div class="control-container__inputs">
+        <label class="lbl" for="email">Email</label>
+        <input class="ipt" id="email" formControlName="email" type="email" />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -168,13 +186,15 @@
       </div>
     </div>
     <div class="password__control control-container">
-      <label class="lbl" for="password">Password</label>
-      <input
-        class="ipt"
-        id="password"
-        formControlName="password"
-        type="password"
-      />
+      <div class="control-container__inputs">
+        <label class="lbl" for="password">Password</label>
+        <input
+          class="ipt"
+          id="password"
+          formControlName="password"
+          type="password"
+        />
+      </div>
       <div
         class="errors-list"
         *ngIf="
@@ -202,8 +222,10 @@
     </div>
     <div class="address__container" formGroupName="address">
       <div class="street__control control-container">
-        <label class="lbl" for="street">Street</label>
-        <input class="ipt" id="street" formControlName="street" type="text" />
+        <div class="control-container__inputs">
+          <label class="lbl" for="street">Street</label>
+          <input class="ipt" id="street" formControlName="street" type="text" />
+        </div>
         <div
           class="errors-list"
           *ngIf="
@@ -220,8 +242,10 @@
         </div>
       </div>
       <div class="city__control control-container">
-        <label class="lbl" for="city">City</label>
-        <input class="ipt" id="city" formControlName="city" type="text" />
+        <div class="control-container__inputs">
+          <label class="lbl" for="city">City</label>
+          <input class="ipt" id="city" formControlName="city" type="text" />
+        </div>
         <div
           class="errors-list"
           *ngIf="
@@ -238,8 +262,10 @@
         </div>
       </div>
       <div class="zip__control control-container">
-        <label class="lbl" for="zip">Zip Code</label>
-        <input class="ipt" id="zip" formControlName="zip" type="number" />
+        <div class="control-container__inputs">
+          <label class="lbl" for="zip">Zip Code</label>
+          <input class="ipt" id="zip" formControlName="zip" type="number" />
+        </div>
         <div
           class="errors-list"
           *ngIf="
@@ -256,6 +282,6 @@
         </div>
       </div>
     </div>
-    <button class="btn">Submit</button>
+    <button class="btn form-button">Submit</button>
   </form>
 </div>

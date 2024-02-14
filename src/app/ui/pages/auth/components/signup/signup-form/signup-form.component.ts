@@ -6,7 +6,7 @@ import { UniqueEmailValidator } from 'src/app/utils/validators/email-validator';
 @Component({
   selector: 'orix-signup-form',
   templateUrl: './signup-form.component.html',
-  styleUrl: './signup-form.component.scss'
+  styleUrls: ['./signup-form.component.scss', './signup-form-desktop.component.scss']
 })
 export class SignupFormComponent {
   signUpForm!: FormGroup;
