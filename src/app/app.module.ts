@@ -11,6 +11,10 @@ import { AuthModule } from './ui/pages/auth/auth.module';
 import { AdminModule } from './ui/pages/admin/admin.module';
 import { ShoppingCartModule } from './ui/pages/shopping-cart/shopping-cart.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { SetHeadersInterceptor } from './interceptors/set-headers.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     StoreModule.forRoot({screenMode: darkModeReducer}),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: SetHeadersInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
