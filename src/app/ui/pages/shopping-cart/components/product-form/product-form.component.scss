@@ -1,0 +1,34 @@
+@import '../../../../../../styles.scss';
+
+.product-form__container {
+  @include displayFlex(column, center, center, 2rem);
+  width: 100%;
+
+  form {
+    @include displayFlex(column, flex-start, flex-start, 1rem);
+    width: 100%;
+
+    .control-container {
+      @include displayFlex(column, flex-start, center, 0.5rem);
+      width: 100%;
+
+      .controls {
+        @include displayFlex(row, center, center, 0.5rem);
+        width: 100%;
+
+        .lbl {
+          width: calc(100% - 26rem);
+        }
+
+        .ipt {
+          width: 23rem;
+        }
+      }
+    }
+
+    .btn {
+      align-self: center;
+      margin-top: 0.7rem;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<div class="product-form__container">
+  <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+    <div class="name__control control-container">
+      <div class="controls">
+        <label class="lbl" for="name">Name</label>
+        <input class="ipt" id="name" formControlName="name" type="text" />
+      </div>
+      <div
+        class="errors-list"
+        *ngIf="
+          createProductForm.get('name')?.invalid &&
+          (createProductForm.get('name')?.dirty ||
+            createProductForm.get('name')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="createProductForm.get('name')?.hasError('required')"
+          >Name is required</span
+        >
+      </div>
+    </div>
+    <div class="description control-container">
+      <div class="controls">
+        <label class="lbl" for="description">Description</label>
+        <input
+          class="ipt"
+          id="description"
+          formControlName="description"
+          type="text"
+        />
+      </div>
+      <div
+        class="errors-list"
+        *ngIf="
+          createProductForm.get('description')?.invalid &&
+          (createProductForm.get('description')?.dirty ||
+            createProductForm.get('description')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="createProductForm.get('description')?.hasError('required')"
+          >Description is required</span
+        >
+      </div>
+    </div>
+    <div class="price__control control-container">
+      <div class="controls">
+        <label class="lbl" for="price">Price</label>
+        <input class="ipt" id="price" formControlName="price" type="number" />
+      </div>
+      <div
+        class="errors-list"
+        *ngIf="
+          createProductForm.get('price')?.invalid &&
+          (createProductForm.get('price')?.dirty ||
+            createProductForm.get('price')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="createProductForm.get('price')?.hasError('required')"
+          >Price is required</span
+        >
+      </div>
+    </div>
+    <div class="image__control control-container">
+      <div class="controls">
+        <label class="lbl" for="image">Image</label>
+        <input class="ipt" id="image" formControlName="image" type="text" />
+      </div>
+      <div
+        class="errors-list"
+        *ngIf="
+          createProductForm.get('image')?.invalid &&
+          (createProductForm.get('image')?.dirty ||
+            createProductForm.get('image')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="createProductForm.get('image')?.hasError('required')"
+          >Image is required</span
+        >
+      </div>
+    </div>
+    <button class="btn">Create</button>
+  </form>
+</div>
