@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   logOut(): void {
-    sessionStorage.removeItem('AS_access_token');
+    sessionStorage.removeItem('OX_access_token');
   }
 
   getUserRole(): string {
@@ -58,11 +58,11 @@ export class AuthService {
 
   private setAccessToken(userInfo: UserM): void {
     const token: string = this.generateAccessToken(userInfo);
-    sessionStorage.setItem('AS_access_token', token);
+    sessionStorage.setItem('OX_access_token', token);
   }
 
   private getAccessToken(): string | null {
-    return sessionStorage.getItem('AS_access_token');
+    return sessionStorage.getItem('OX_access_token');
   }
 
   private getUserInfo(): UserM {
