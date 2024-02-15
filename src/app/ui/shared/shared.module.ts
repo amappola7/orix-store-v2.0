@@ -39,7 +39,8 @@ import { LocationFormComponent } from './components/location-form/location-form.
     HttpClientModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    ModalContainerComponent
+    ModalContainerComponent,
+    LocationFormComponent
   ]
 })
 export class SharedModule { }

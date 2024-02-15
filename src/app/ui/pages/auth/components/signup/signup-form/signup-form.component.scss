@@ -6,7 +6,7 @@
   height: 100%;
 
   .signup__form {
-    @include displayFlex(column, flex-start, center, 1.5rem);
+    @include displayFlex(column, center, center, 1.5rem);
     width: 85%;
     height: fit-content;
     padding: 2rem;
@@ -44,6 +44,12 @@
         font-size: 1.6rem;
         text-align: center;
       }
+    }
+
+
+
+    .street__control {
+      margin-bottom: 1.5rem;
     }
   }
 }

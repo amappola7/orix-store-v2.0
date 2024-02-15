@@ -1,0 +1,31 @@
+@import '../../../../../styles.scss';
+
+.location__form {
+  width: 100%;
+
+  .control-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    .control-container__inputs {
+      @include displayFlex(row, flex-start, center);
+      width: 100%;
+
+      .lbl {
+        width: 33%;
+      }
+
+      .ipt {
+        width: 67%;
+      }
+    }
+
+    .errors-list {
+      width: 100%;
+      margin-top: 0.5rem;
+      color: $grey-color;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+}

@@ -58,7 +58,6 @@ export class SignupFormComponent {
       ],
       address: this.fb.group({
         street: ['', Validators.required],
-        city: ['', [Validators.required]],
         zip: ['', [Validators.pattern(/^\d{5}$/)]],
       }),
     });

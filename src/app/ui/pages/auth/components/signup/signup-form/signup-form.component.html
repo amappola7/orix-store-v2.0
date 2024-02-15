@@ -221,6 +221,9 @@
       </div>
     </div>
     <div class="address__container" formGroupName="address">
+      <div class="location-form">
+        <orix-location-form></orix-location-form>
+      </div>
       <div class="street__control control-container">
         <div class="control-container__inputs">
           <label class="lbl" for="street">Street</label>
@@ -238,26 +241,6 @@
             class="error-message"
             *ngIf="signUpForm.get('address.street')?.hasError('required')"
             >Street is required</span
-          >
-        </div>
-      </div>
-      <div class="city__control control-container">
-        <div class="control-container__inputs">
-          <label class="lbl" for="city">City</label>
-          <input class="ipt" id="city" formControlName="city" type="text" />
-        </div>
-        <div
-          class="errors-list"
-          *ngIf="
-            signUpForm.get('address.city')?.invalid &&
-            (signUpForm.get('address.city')?.dirty ||
-              signUpForm.get('address.city')?.touched)
-          "
-        >
-          <span
-            class="error-message"
-            *ngIf="signUpForm.get('address.city')?.hasError('required')"
-            >City is required</span
           >
         </div>
       </div>
