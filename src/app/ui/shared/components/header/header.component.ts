@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,8 +7,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss', './header-desktop.component.scss']
 })
-export class HeaderComponent {
-  iconMenu: IconDefinition = faBars;
+export class HeaderComponent implements OnInit {
+  iconMobileMenu: IconDefinition = faBars;
   screenSize: number = window.screen.width;
   screenMode: boolean = true;
   logoToUse!: string;
@@ -16,7 +16,13 @@ export class HeaderComponent {
     lightModeLogo: '../../../../../assets/logos/Logo Light Mode.png',
     darkModeLogo: '../../../../../assets/logos/Logo Dark Mode.png',
   }
+
   @Input() currentPage!: string;
+  @Output() openMobileMenuNotification: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  ngOnInit() {
+    this.settingLogo();
+  }
 
   settingLogo(): void {
     if (this.screenSize > 768 && this.currentPage == 'home') {
@@ -28,7 +34,8 @@ export class HeaderComponent {
     }
   }
 
-  ngOnInit() {
-    this.settingLogo();
+  openMobileMenu(): void {
+    this.openMobileMenuNotification.emit(true);
   }
+
 }

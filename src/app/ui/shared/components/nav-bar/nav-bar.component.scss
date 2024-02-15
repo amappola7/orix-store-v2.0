@@ -1,1 +1,28 @@
 @import "../../../../../styles.scss";
+
+.nav-bar {
+  width: 100%;
+
+  ul {
+    @include displayFlex(column, center, center, 1.5rem);
+    width: 100%;
+
+    li {
+      @include displayFlex(row, center, center);
+      width: 60%;
+      height: 5rem;
+      background-color: $light-grey;
+      list-style: none;
+
+      a {
+        font-size: 1.8rem;
+        color: #000000;
+        text-decoration: none;
+      }
+
+      .shopping-cart__link {
+        @include displayFlex(row, center, center, 1rem);
+      }
+    }
+  }
+}

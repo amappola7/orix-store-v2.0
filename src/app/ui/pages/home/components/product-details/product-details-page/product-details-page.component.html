@@ -1,4 +1,4 @@
-<orix-header></orix-header>
+<orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
 <section class="product-details__page">
   <div class="product-details__card">
     <orix-product-details-card></orix-product-details-card>
@@ -8,3 +8,4 @@
   </div>
 </section>
 <orix-footer></orix-footer>
+<orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>

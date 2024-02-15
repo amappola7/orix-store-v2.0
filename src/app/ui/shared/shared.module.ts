@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalContainerComponent } from './components/modal-container/modal-container.component';
 import { LocationFormComponent } from './components/location-form/location-form.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LocationFormComponent } from './components/location-form/location-form.
     HeaderComponent,
     FooterComponent,
     ModalContainerComponent,
-    LocationFormComponent
+    LocationFormComponent,
+    MobileMenuComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { LocationFormComponent } from './components/location-form/location-form.
     FontAwesomeModule,
     ReactiveFormsModule,
     ModalContainerComponent,
-    LocationFormComponent
+    LocationFormComponent,
+    MobileMenuComponent
   ]
 })
 export class SharedModule { }

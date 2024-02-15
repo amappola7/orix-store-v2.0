@@ -1,5 +1,6 @@
-<orix-header></orix-header>
+<orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
 <section class="auth-page">
   <orix-login-form></orix-login-form>
 </section>
 <orix-footer></orix-footer>
+<orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>

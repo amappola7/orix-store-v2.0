@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './product-details-page.component.scss'
 })
 export class ProductDetailsPageComponent {
+  displayMobileMenu: boolean = false;
+  screenSize: number = window.screen.width;
 
+  openMobileMenu(): void {
+    this.displayMobileMenu = true;
+  }
+
+  closeMobileMenu(): void {
+    this.displayMobileMenu = false;
+  }
 }

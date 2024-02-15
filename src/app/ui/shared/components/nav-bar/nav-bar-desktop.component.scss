@@ -2,21 +2,30 @@
 
 @include desktopQueries {
   .nav-bar {
+    width: fit-content;
+
     ul {
-      @include displayFlex(row, flex-end, center, 1.5rem);
+      @include displayFlex(row, flex-end, center, 2rem);
       height: 100%;
 
       li {
-        list-style: none;
-        font-size: 1.8rem;
+        @include displayFlex(row, flex-end, center);
+        width: fit-content;
+        height: fit-content;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
 
         a {
-          text-decoration: none;
+          font-size: 1.8rem;
           color: #000000;
+          text-decoration: none;
         }
       }
     }
+
   }
+
 
   .home-colors {
     ul {

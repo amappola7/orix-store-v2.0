@@ -1,14 +1,14 @@
 <!-- <section class="home" [ngClass]="screenMode ? '' : 'dark-mode'">
   <orix-dark-mode-button (screenModeChange)="screenModeChange()"></orix-dark-mode-button>
 </section> -->
-<orix-header [currentPage]="'home'"></orix-header>
+<orix-header [currentPage]="'home'" (openMobileMenuNotification)="openMobileMenu()"></orix-header>
 <section class="home">
   <div class="welcome-banner">
     <orix-welcome-banner></orix-welcome-banner>
   </div>
   <div id="home-content">
-
     <orix-product-list-page></orix-product-list-page>
   </div>
 </section>
 <orix-footer></orix-footer>
+<orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>

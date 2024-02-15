@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   screenMode$!: Observable<boolean>;
   screenMode!: boolean;
+  displayMobileMenu: boolean = false;
+  screenSize: number = window.screen.width;
+
   constructor(
     private store: Store<{screenMode: boolean}>
   ) {}
@@ -21,5 +24,13 @@ export class HomeComponent implements OnInit {
 
   screenModeChange(): void {
     this.screenMode$.subscribe(mode => this.screenMode = mode);
+  }
+
+  openMobileMenu(): void {
+    this.displayMobileMenu = true;
+  }
+
+  closeMobileMenu(): void {
+    this.displayMobileMenu = false;
   }
 }

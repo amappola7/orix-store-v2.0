@@ -1,7 +1,8 @@
 <div class="shopping-cart__page">
-  <orix-header></orix-header>
+  <orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
 <section class="shopping-cart__section">
   <p>Shopping cart</p>
 </section>
 <orix-footer></orix-footer>
+<orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>
 </div>

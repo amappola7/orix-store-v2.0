@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent {
+  displayMobileMenu: boolean = false;
+  screenSize: number = window.screen.width;
 
+  openMobileMenu(): void {
+    this.displayMobileMenu = true;
+  }
+
+  closeMobileMenu(): void {
+    this.displayMobileMenu = false;
+  }
 }

@@ -3,11 +3,11 @@
     <img [src]="logoToUse" alt="Orix Ecommerce Logo">
   </div>
   <div class="nav-bar__mobile" *ngIf="screenSize < 768">
-    <button class="btn">
-      <fa-icon [icon]="iconMenu"></fa-icon>
+    <button class="btn" (click)="openMobileMenu()">
+      <fa-icon [icon]="iconMobileMenu"></fa-icon>
     </button>
   </div>
   <div class="nav-bar__devices" *ngIf="screenSize > 768">
-    <orix-nav-bar [currentPage]="currentPage"></orix-nav-bar>
+    <orix-nav-bar currentPage="currentPage"></orix-nav-bar>
   </div>
 </header>

@@ -1,0 +1,13 @@
+<div class="mobile-menu__container">
+  <div class="close-mobile-menu__button-container">
+    <button class="close-mobile-menu__button" (click)="closeMobileMenu()"><fa-icon [icon]="closeModalIcon"></fa-icon></button>
+  </div>
+  <div class="mobile-menu__content">
+    <div class="logo">
+      <img [src]="screenMode ? logos.lightModeLogo : logos.darkModeLogo" alt="Orix Ecommerce Logo">
+    </div>
+    <div class="nav-bar">
+      <orix-nav-bar></orix-nav-bar>
+    </div>
+  </div>
+</div>
