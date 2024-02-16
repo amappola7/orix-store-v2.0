@@ -1,13 +1,13 @@
 import { ProductM } from "./product";
 
-export interface ShoppingCartItem {
+export interface ShoppingCartItemM {
   quantity: number,
   product: ProductM
 }
 
-export interface ShoppingCart {
+export interface ShoppingCartM {
   id: number;
-  userId: number,
-  userEmail: string,
-  items: ShoppingCartItem[],
+  user_id: number,
+  user_email: string,
+  items: ShoppingCartItemM[],
 }
