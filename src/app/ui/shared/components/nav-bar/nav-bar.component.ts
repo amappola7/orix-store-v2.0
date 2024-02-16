@@ -34,10 +34,12 @@ export class NavBarComponent implements OnInit {
   logout(): void {
     if(!this.authService.userIsAuthenticated()) {
       alert('You\'re not logged in');
+      this.userStatus = false;
     } else {
       this.authService.logout();
       alert('Logged out successfully');
       this.router.navigate(['/home']);
+      this.userStatus = false;
     }
   }
 }
