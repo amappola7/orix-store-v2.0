@@ -20,6 +20,14 @@
         text-decoration: none;
       }
 
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 1.8rem;
+        font-family: $font-family;
+        color: #000000;
+      }
+
       .shopping-cart__link {
         @include displayFlex(row, center, center, 1rem);
       }

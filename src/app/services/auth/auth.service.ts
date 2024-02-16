@@ -43,7 +43,7 @@ export class AuthService {
     // );
   }
 
-  logOut(): void {
+  logout(): void {
     sessionStorage.removeItem('OX_access_token');
   }
 
