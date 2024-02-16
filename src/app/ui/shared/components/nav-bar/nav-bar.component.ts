@@ -14,6 +14,7 @@ export class NavBarComponent implements OnInit {
   cartIcon: IconDefinition = faShoppingCart
   screenSize: number = window.screen.width;
   userStatus!: boolean;
+  userRole!: string;
 
   @Input() currentPage!: string;
 
@@ -24,6 +25,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.userStatus = this.authService.userIsAuthenticated() ? true : false;
+
+    if (this.userStatus) {
+      this.userRole = this.authService.getUserRole();
+    }
   }
 
   logout(): void {

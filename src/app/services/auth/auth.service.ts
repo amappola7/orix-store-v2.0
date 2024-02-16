@@ -48,8 +48,8 @@ export class AuthService {
   }
 
   getUserRole(): string {
-    const user = this.getUserInfo().role;
-    return user;
+    const userRole = this.getUserInfo().role;
+    return userRole;
   }
 
   private generateAccessToken(userInfo: UserM): string {
