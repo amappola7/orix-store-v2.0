@@ -7,7 +7,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router: Router = inject(Router);
 
   if (!authService.userIsAuthenticated()) {
-    alert('You don\'t have access to this page, please login');
+    alert('You don\'t have access to this page, please log in');
     return router.createUrlTree(['auth/login']);
   } else if (authService.getUserRole() === 'admin') {
     return true;
@@ -15,7 +15,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     alert('You don\'t have access to this page');
     return router.createUrlTree(['home']);
   } else {
-    alert('You don\'t have access to this page, please login');
+    alert('You don\'t have access to this page, please log in');
     return router.createUrlTree(['auth/login']);
   }
 };
