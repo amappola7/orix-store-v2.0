@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ShoppingCartComponent } from './shopping-cart.component';
 import { ShoppingCartRoutingModule } from './shopping-cart-routing-module.component';
 import { SharedModule } from '../../shared/shared.module';
-import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductFormComponent } from '../admin/components/product-form/product-form.component';
 
 
 
 @NgModule({
   declarations: [
-    ShoppingCartComponent,
-    ProductFormComponent
+    ShoppingCartComponent
   ],
   imports: [
     CommonModule,
