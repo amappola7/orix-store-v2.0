@@ -1,8 +1,9 @@
-<div class="footer-container">
+<div class="footer-container" [ngClass]="screenMode ? '' : 'dark-mode-colors'">
   <footer class="footer">
     <p>© All rights reserved</p>
     <div class="dark-mode__button">
-      <orix-dark-mode-button></orix-dark-mode-button>
+      <orix-dark-mode-button (screenModeChange)="screenModeChange()"></orix-dark-mode-button>
     </div>
   </footer>
 </div>
+  

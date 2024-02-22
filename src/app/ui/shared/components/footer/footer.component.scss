@@ -17,3 +17,13 @@
     }
   }
 }
+
+.dark-mode-colors {
+  .footer {
+    background-color: $light-mode;
+
+    p {
+      color: $dark-mode;
+    }
+  }
+}
