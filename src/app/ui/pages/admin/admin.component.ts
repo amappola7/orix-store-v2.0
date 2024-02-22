@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductM } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'orix-admin',
@@ -11,9 +13,13 @@ export class AdminComponent {
   displayMobileMenu: boolean = false;
   screenSize: number = window.screen.width;
 
+  constructor(
+    private productService: ProductService
+  ) { }
+
   openModal(actionInfo: string): void {
     this.displayModal = true;
-    this.modalMode =  actionInfo;
+    this.modalMode = actionInfo;
   }
 
   closeModal(): void {
@@ -26,5 +32,21 @@ export class AdminComponent {
 
   closeMobileMenu(): void {
     this.displayMobileMenu = false;
+  }
+
+  onSubmit(productData: ProductM) {
+    if (this.modalMode == 'Create') {
+      this.productService.createProduct(productData)
+        .subscribe(() => {
+          alert('Product successfully created');
+          this.closeModal();
+        })
+    } else {
+      this.productService.editProduct(productData)
+        .subscribe(() => {
+          alert('Product successfully created');
+          this.closeModal();
+        })
+    }
   }
 }

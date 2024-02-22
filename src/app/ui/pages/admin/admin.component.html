@@ -9,7 +9,7 @@
 <orix-footer></orix-footer>
 <div class="modal__container" *ngIf="displayModal">
   <orix-modal-container (closeModalNotification)="closeModal()">
-    <orix-product-form  [mode]="modalMode"></orix-product-form>
+    <orix-product-form  [mode]="modalMode" (submitForm)="onSubmit($event)"></orix-product-form>
   </orix-modal-container>
 </div>
 <orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>

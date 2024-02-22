@@ -24,7 +24,7 @@ export class ProductFormComponent implements OnInit {
     this.createEditProductForm = this.fb.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      category: [''],
+      category: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.pattern('[0-9 ]*')]],
       image: ['', [Validators.required]],
     });
@@ -50,7 +50,7 @@ export class ProductFormComponent implements OnInit {
   onSubmit(): void {
     if(this.createEditProductForm.valid) {
       this.submitForm.emit(this.createEditProductForm.value);
-      console.log(this.createEditProductForm.value);
+      this.createEditProductForm.reset();
     } else {
       this.createEditProductForm.markAllAsTouched();
     }

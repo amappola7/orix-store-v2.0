@@ -50,7 +50,7 @@
       <div class="controls">
         <label class="lbl" for="category">Category</label>
         <!-- <input class="ipt" id="category" formControlName="category" type="text" /> -->
-        <select class="ipt" formArrayName="category" name="category" id="category">
+        <select class="ipt" formControlName="category" name="category" id="category">
           <option [value]="" selected>---</option>
           <option *ngFor="let category of categoriesList" [value]="category">{{category}}</option>
         </select>
