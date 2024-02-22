@@ -9,6 +9,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class ProductService {
   private _url: string = 'http://localhost:3000/products';
+  productToEdit!: ProductM;
 
   constructor(
     private http: HttpClient,
@@ -108,5 +109,9 @@ export class ProductService {
           return of(error);
         })
       )
+  }
+
+  fillForm(productData: ProductM): void {
+    this.productToEdit =  productData;
   }
 }

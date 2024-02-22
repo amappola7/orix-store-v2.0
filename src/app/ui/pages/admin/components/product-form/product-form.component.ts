@@ -33,6 +33,8 @@ export class ProductFormComponent implements OnInit {
     .subscribe((result) => {
       this.categoriesList = result;
     })
+
+    if(this.mode === 'Edit') this.fillForm(this.productService.productToEdit);
   };
 
   // onSubmit() {
@@ -51,8 +53,19 @@ export class ProductFormComponent implements OnInit {
     if(this.createEditProductForm.valid) {
       this.submitForm.emit(this.createEditProductForm.value);
       this.createEditProductForm.reset();
+      console.log('clickeando');
     } else {
       this.createEditProductForm.markAllAsTouched();
     }
+  }
+
+  fillForm(productToEdit: ProductM): void {
+    this.createEditProductForm.patchValue({
+      name: productToEdit.name,
+      price: productToEdit.price,
+      description: productToEdit.description,
+      category: productToEdit.category,
+      image: productToEdit.image,
+    });
   }
 }

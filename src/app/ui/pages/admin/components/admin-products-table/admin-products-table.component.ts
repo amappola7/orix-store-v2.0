@@ -27,7 +27,8 @@ export class AdminProductsTableComponent {
     this.productList$ = this.productService.getProducts();
   }
 
-  openModal(actionInfo: string): void {
+  openModal(actionInfo: string, productData: ProductM): void {
     this.openModalNotification.emit(actionInfo);
+    this.productService.fillForm(productData);
   }
 }
