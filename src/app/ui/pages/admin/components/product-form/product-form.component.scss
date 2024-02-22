@@ -4,20 +4,25 @@
   @include displayFlex(column, center, center, 2rem);
   width: 100%;
 
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
   form {
     @include displayFlex(column, flex-start, flex-start, 1rem);
     width: 100%;
 
     .control-container {
-      @include displayFlex(column, flex-start, center, 0.5rem);
+      @include displayFlex(column, center, center, 0.5rem);
       width: 100%;
 
       .controls {
-        @include displayFlex(row, center, center, 0.5rem);
+        @include displayFlex(column, center, center, 0.5rem);
         width: 100%;
 
         .lbl {
-          width: calc(100% - 26rem);
+          width: 100%;
         }
 
         .ipt {

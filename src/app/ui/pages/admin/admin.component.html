@@ -2,14 +2,14 @@
 <section class="admin-table">
   <div class="create-product__container">
     <h2>Products</h2>
-    <button class="create-product__button" (click)="openModal('create')">Create Product</button>
+    <button class="create-product__button" (click)="openModal('Create')">Create Product</button>
   </div>
   <orix-admin-products-table (openModalNotification)="openModal($event)"></orix-admin-products-table>
 </section>
 <orix-footer></orix-footer>
-<div class="modal__container" *ngIf="modalMode">
+<div class="modal__container" *ngIf="displayModal">
   <orix-modal-container (closeModalNotification)="closeModal()">
-    <orix-product-form></orix-product-form>
+    <orix-product-form  [mode]="modalMode"></orix-product-form>
   </orix-modal-container>
 </div>
 <orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>

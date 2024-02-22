@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductM } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrl: './product-form.component.scss'
 })
 export class ProductFormComponent implements OnInit {
-  createProductForm!: FormGroup;
+  createEditProductForm!: FormGroup;
+  categoriesList!: string[];
+
+  @Input() mode!: string;
+  @Output() submitForm: EventEmitter<ProductM> = new EventEmitter<ProductM>();
 
   constructor(
     private fb: FormBuilder,
@@ -16,23 +21,38 @@ export class ProductFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.createProductForm = this.fb.group({
+    this.createEditProductForm = this.fb.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
+      category: [''],
       price: ['', [Validators.required, Validators.pattern('[0-9 ]*')]],
       image: ['', [Validators.required]],
     });
+
+    this.productService.getCategories()
+    .subscribe((result) => {
+      this.categoriesList = result;
+    })
   };
 
-  onSubmit() {
-    if(this.createProductForm.valid) {
-      this.productService.createProduct(this.createProductForm.value)
-      .subscribe(() => {
-        alert('Product successfully created');
-        this.createProductForm.reset();
-      })
+  // onSubmit() {
+    // if(this.createEditProductForm.valid) {
+    //   this.productService.createProduct(this.createEditProductForm.value)
+    //   .subscribe(() => {
+    //     alert('Product successfully created');
+    //     this.createEditProductForm.reset();
+    //   })
+    // } else {
+    //   this.createEditProductForm.markAllAsTouched();
+    // }
+  // }
+
+  onSubmit(): void {
+    if(this.createEditProductForm.valid) {
+      this.submitForm.emit(this.createEditProductForm.value);
+      console.log(this.createEditProductForm.value);
     } else {
-      this.createProductForm.markAllAsTouched();
+      this.createEditProductForm.markAllAsTouched();
     }
   }
 }

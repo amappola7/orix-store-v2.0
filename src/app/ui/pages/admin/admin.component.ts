@@ -6,16 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  modalMode: boolean = false;
+  displayModal: boolean = false;
+  modalMode: string = 'Create';
   displayMobileMenu: boolean = false;
   screenSize: number = window.screen.width;
 
   openModal(actionInfo: string): void {
-    this.modalMode = true;
+    this.displayModal = true;
+    this.modalMode =  actionInfo;
   }
 
   closeModal(): void {
-    this.modalMode = false;
+    this.displayModal = false;
   }
 
   openMobileMenu(): void {

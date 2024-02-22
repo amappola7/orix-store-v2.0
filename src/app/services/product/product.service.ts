@@ -49,24 +49,6 @@ export class ProductService {
     }
   }
 
-  // getProductById(id: number): Observable<ProductM | null> {
-  //   return this.http.get<ProductM>(`${this._url}/${id}`).pipe(
-  //     take(1),
-  //     catchError((error) => {
-  //       alert('Product not found');
-  //       const voidProduct: ProductM = {
-          // id: 0,
-          // name: '',
-          // description: '',
-          // price: 0,
-          // image: '',
-          // category: ''
-  //       };
-  //       console.log('Error getting product', error);
-  //       return of(voidProduct);
-  //     })
-  //   )
-  // }
 
   createProduct(productData: RawProductM): Observable<ProductM | null> {
     if (this.authService.userIsAuthenticated() && this.authService.getUserRole() === 'admin') {
@@ -114,5 +96,17 @@ export class ProductService {
       alert('You don\'t have access to delete a product');
       return of(null);
     }
+  }
+
+  getCategories(): Observable<string[]> {
+    return this.http.get<string[]>(`http://localhost:3000/categories`)
+      .pipe(
+        take(1),
+        tap(() => console.log('Petition get categories successful')),
+        catchError((error) => {
+          console.log(`Error in the get categories petition`);
+          return of(error);
+        })
+      )
   }
 }

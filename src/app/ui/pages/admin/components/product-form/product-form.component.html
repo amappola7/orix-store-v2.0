@@ -1,5 +1,6 @@
 <div class="product-form__container">
-  <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+  <h2>{{mode}}</h2>
+  <form [formGroup]="createEditProductForm" (ngSubmit)="onSubmit()">
     <div class="name__control control-container">
       <div class="controls">
         <label class="lbl" for="name">Name</label>
@@ -8,14 +9,14 @@
       <div
         class="errors-list"
         *ngIf="
-          createProductForm.get('name')?.invalid &&
-          (createProductForm.get('name')?.dirty ||
-            createProductForm.get('name')?.touched)
+          createEditProductForm.get('name')?.invalid &&
+          (createEditProductForm.get('name')?.dirty ||
+            createEditProductForm.get('name')?.touched)
         "
       >
         <span
           class="error-message"
-          *ngIf="createProductForm.get('name')?.hasError('required')"
+          *ngIf="createEditProductForm.get('name')?.hasError('required')"
           >Name is required</span
         >
       </div>
@@ -33,15 +34,39 @@
       <div
         class="errors-list"
         *ngIf="
-          createProductForm.get('description')?.invalid &&
-          (createProductForm.get('description')?.dirty ||
-            createProductForm.get('description')?.touched)
+          createEditProductForm.get('description')?.invalid &&
+          (createEditProductForm.get('description')?.dirty ||
+            createEditProductForm.get('description')?.touched)
         "
       >
         <span
           class="error-message"
-          *ngIf="createProductForm.get('description')?.hasError('required')"
+          *ngIf="createEditProductForm.get('description')?.hasError('required')"
           >Description is required</span
+        >
+      </div>
+    </div>
+    <div class="category__control control-container">
+      <div class="controls">
+        <label class="lbl" for="category">Category</label>
+        <!-- <input class="ipt" id="category" formControlName="category" type="text" /> -->
+        <select class="ipt" formArrayName="category" name="category" id="category">
+          <option [value]="" selected>---</option>
+          <option *ngFor="let category of categoriesList" [value]="category">{{category}}</option>
+        </select>
+      </div>
+      <div
+        class="errors-list"
+        *ngIf="
+          createEditProductForm.get('category')?.invalid &&
+          (createEditProductForm.get('category')?.dirty ||
+            createEditProductForm.get('category')?.touched)
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="createEditProductForm.get('category')?.hasError('required')"
+          >Category is required</span
         >
       </div>
     </div>
@@ -53,14 +78,14 @@
       <div
         class="errors-list"
         *ngIf="
-          createProductForm.get('price')?.invalid &&
-          (createProductForm.get('price')?.dirty ||
-            createProductForm.get('price')?.touched)
+          createEditProductForm.get('price')?.invalid &&
+          (createEditProductForm.get('price')?.dirty ||
+            createEditProductForm.get('price')?.touched)
         "
       >
         <span
           class="error-message"
-          *ngIf="createProductForm.get('price')?.hasError('required')"
+          *ngIf="createEditProductForm.get('price')?.hasError('required')"
           >Price is required</span
         >
       </div>
@@ -73,18 +98,18 @@
       <div
         class="errors-list"
         *ngIf="
-          createProductForm.get('image')?.invalid &&
-          (createProductForm.get('image')?.dirty ||
-            createProductForm.get('image')?.touched)
+          createEditProductForm.get('image')?.invalid &&
+          (createEditProductForm.get('image')?.dirty ||
+            createEditProductForm.get('image')?.touched)
         "
       >
         <span
           class="error-message"
-          *ngIf="createProductForm.get('image')?.hasError('required')"
+          *ngIf="createEditProductForm.get('image')?.hasError('required')"
           >Image is required</span
         >
       </div>
     </div>
-    <button class="btn form-button  ">Create</button>
+    <button class="btn form-button">{{mode}}</button>
   </form>
 </div>
