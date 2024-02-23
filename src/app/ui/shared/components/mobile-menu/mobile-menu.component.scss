@@ -53,8 +53,9 @@
 
   .close-mobile-menu__button-container {
     .close-mobile-menu__button {
-      color: $dark-mode;
-      background-color: white;
+      border: solid 0.1rem $grey-color;
+      color: white;
+      background-color: $dark-mode;
     }
   }
 }
