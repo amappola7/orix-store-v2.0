@@ -31,7 +31,9 @@
   .modal-content__container {
     @include displayFlex(row, center, center);
     width: 90%;
+    min-height: 80vh;
     height: 80vh;
+    padding: 2rem;
     border-radius: $border-radius;
     background-color: white;
   }

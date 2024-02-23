@@ -6,7 +6,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 @Component({
   selector: 'orix-product-form',
   templateUrl: './product-form.component.html',
-  styleUrl: './product-form.component.scss'
+  styleUrls: ['./product-form.component.scss', './product-form-desktop.component.scss']
 })
 export class ProductFormComponent implements OnInit {
   createEditProductForm!: FormGroup;

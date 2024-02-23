@@ -1,0 +1,15 @@
+@import "../../../../../../styles.scss";
+
+@include desktopQueries() {
+  .product-form__container {
+    form {
+      .control-container {
+        .controls {
+          .ipt {
+            width: 35rem;
+          }
+        }
+      }
+    }
+  }
+}
