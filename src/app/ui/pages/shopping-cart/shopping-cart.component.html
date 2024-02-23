@@ -1,8 +1,58 @@
 <div class="shopping-cart__page">
   <orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
-<section class="shopping-cart__section">
-  <p>Shopping cart</p>
-</section>
-<orix-footer></orix-footer>
-<orix-mobile-menu *ngIf="displayMobileMenu && screenSize <= 768" (closeMobileMenuNotification)="closeMobileMenu()"></orix-mobile-menu>
+  <section class="shopping-cart__section">
+    <div class="shopping-cart__title">
+      <h2>Your cart</h2>
+      <div class="shopping-cart__title__buttons">
+        <button class="btn" (click)="clearCart()">Clear</button>
+        <button class="btn" routerLink="">Continue shopping</button>
+      </div>
+    </div>
+    <div class="shopping-cart__cart">
+      <div class="shopping-cart__container">
+        <p class="empty-cart" *ngIf="cart.length === 0">Your cart is empty</p>
+        <div class="cart-item" *ngFor="let item of cart">
+          <div class="cart-item__image-container">
+            <img
+              class="cart-item__image"
+              [src]="item.product.image"
+              [alt]="item.product.name"
+              [title]="item.product.name"
+            />
+          </div>
+          <div class="cart-item__content">
+            <h2>{{ item.product.name }}</h2>
+            <p>{{ item.product.price | currency }}</p>
+            <span>
+              <button
+                class="btn"
+                (click)="removeQuantityToProduct(item.product.id)"
+              >
+                <fa-icon [icon]="icons.removeProductIcon"></fa-icon>
+              </button>
+              <p>{{ item.quantity }}</p>
+              <button
+                class="btn"
+                (click)="addQuantityToProduct(item.product.id)"
+              >
+                <fa-icon [icon]="icons.addProductIcon"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="shopping-cart__resume-order">
+        <div>
+          <h2>Summary</h2>
+          <p>Total {{ totalCart | currency }}</p>
+        </div>
+        <button class="btn">Check out</button>
+      </div>
+    </div>
+  </section>
+  <orix-footer></orix-footer>
+  <orix-mobile-menu
+    *ngIf="displayMobileMenu && screenSize <= 768"
+    (closeMobileMenuNotification)="closeMobileMenu()"
+  ></orix-mobile-menu>
 </div>
