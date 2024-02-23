@@ -1,4 +1,4 @@
-<nav class="nav-bar" [ngClass]="currentPage == 'home' ? 'home-colors' : ''">
+<nav class="nav-bar" [ngClass]="currentPage == 'home' ? 'home-colors' : ''" [ngClass]="screenMode ? '': 'dark-mode'" >
   <ul>
     <li class="nav-bar-button">
       <a routerLink="/home" routerLinkActive="router-link-active">Home</a>

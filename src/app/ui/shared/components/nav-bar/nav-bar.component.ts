@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
 import { Observable, map, of } from 'rxjs';
 import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -16,17 +17,22 @@ export class NavBarComponent implements OnInit {
   screenSize: number = window.screen.width;
   userStatus!: boolean;
   userRole!: string;
+  screenMode$!: Observable<boolean>;
+  screenMode!: boolean;
 
   @Input() currentPage!: string;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private alertsService: AlertsService
+    private alertsService: AlertsService,
+    private store: Store<{screenMode: boolean}>
   ) {}
 
   ngOnInit(): void {
     this.userStatus = this.authService.userIsAuthenticated() ? true : false;
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
 
     if (this.userStatus) {
       this.userRole = this.authService.getUserRole();

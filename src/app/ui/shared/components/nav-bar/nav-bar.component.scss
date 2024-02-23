@@ -34,3 +34,21 @@
     }
   }
 }
+
+.dark-mode {
+  ul {
+    li {
+      @include displayFlex(row, center, center);
+      border: solid 0.1rem $grey-color;
+      background-color: $dark-mode;
+
+      a {
+        color: white;
+      }
+
+      button {
+        color: white;
+      }
+    }
+  }
+}
