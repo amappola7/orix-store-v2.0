@@ -37,20 +37,8 @@ export class ProductFormComponent implements OnInit {
     if (this.mode === 'Edit') this.fillForm(this.productService.productToEdit);
   };
 
-  // onSubmit() {
-  // if(this.createEditProductForm.valid) {
-  //   this.productService.createProduct(this.createEditProductForm.value)
-  //   .subscribe(() => {
-  //     alert('Product successfully created');
-  //     this.createEditProductForm.reset();
-  //   })
-  // } else {
-  //   this.createEditProductForm.markAllAsTouched();
-  // }
-  // }
-
   onSubmit(): void {
-    if (this.createEditProductForm.valid) {
+    if (this.createEditProductForm.valid || this.mode === 'Create') {
       this.submitForm.emit(this.createEditProductForm.value);
       this.createEditProductForm.reset();
     } else if (this.mode === 'Edit') {
