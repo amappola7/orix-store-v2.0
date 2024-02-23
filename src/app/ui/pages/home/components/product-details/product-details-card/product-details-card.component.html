@@ -7,10 +7,10 @@
     <p class="product-info__description">{{(productInfo$ | async)?.description}}</p>
     <p class="product-info__price">{{(productInfo$ | async)?.price | currency}}</p>
     <span class="product-info__buttons">
-      <button class="btn quantity"><fa-icon [icon]="icons.remove"></fa-icon></button>
-      <p>1</p>
-      <button class="btn quantity"><fa-icon [icon]="icons.add"></fa-icon></button>
-      <button class="btn add-to-cart" title="Add to cart">
+      <button (click)="removeQuantityToProduct()" class="btn quantity"><fa-icon [icon]="icons.remove"></fa-icon></button>
+      <p>{{quantity}}</p>
+      <button (click)="addQuantityToProduct()" class="btn quantity"><fa-icon [icon]="icons.add"></fa-icon></button>
+      <button class="btn add-to-cart" title="Add to cart" (click)="addProductToCart(productId)">
         <span class="icon"
           ><fa-icon [icon]="icons.shoppingCart"></fa-icon></span
         ><span>Add</span>

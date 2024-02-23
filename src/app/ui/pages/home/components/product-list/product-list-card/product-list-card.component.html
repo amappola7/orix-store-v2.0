@@ -19,7 +19,7 @@
           ><fa-icon [icon]="icons.moreInfoIcon"></fa-icon></span
         ><span>Details</span></a
       >
-      <button class="btn card-button" title="Add to cart">
+      <button class="btn card-button" title="Add to cart" (click)="addProductToCart(productInfo.id)">
         <span class="icon"
           ><fa-icon [icon]="icons.shoppingCartIcon"></fa-icon></span
         ><span>Buy</span>
