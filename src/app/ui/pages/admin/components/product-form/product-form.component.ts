@@ -50,6 +50,7 @@ export class ProductFormComponent implements OnInit {
   // }
 
   onSubmit(): void {
+    console.log('clickeando');
     if(this.createEditProductForm.valid) {
       this.submitForm.emit(this.createEditProductForm.value);
       this.createEditProductForm.reset();
