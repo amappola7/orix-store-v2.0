@@ -75,9 +75,9 @@ export class SignupFormComponent {
     if (this.signUpForm.valid) {
       const formattedUserData = userInfoMapper(this.signUpForm.value);
       this.userService.createUser(formattedUserData)
-      .subscribe(() => {
+      .subscribe((result) => {
         alert('Success');
-        this.authService.signUp;
+        this.authService.signUp(result!);
         this.router.navigate(['/home']);
       });
 

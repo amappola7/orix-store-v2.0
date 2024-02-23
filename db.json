@@ -556,17 +556,30 @@
       "__v": 0
     },
     {
-      "username": "k_stupidella",
-      "firstName": "Karla",
-      "secondName": "Melissa",
-      "surname": "Sandoval",
-      "secondSurname": "Fonseca",
       "email": "ks@gmail.com",
+      "username": "k_stupidella",
       "password": "#123asdf",
-      "address": {
-        "street": "Calle 99",
-        "zip": 12354
+      "name": {
+        "firstName": "Karla",
+        "secondName": "Melissa",
+        "surname": "Sandoval",
+        "secondSurname": "Fonseca"
       },
+      "address": {
+        "country": "Colombia",
+        "state": "Boyacá",
+        "city": "Tunja",
+        "street": "Calle 99",
+        "number": null,
+        "zipCode": 21355,
+        "geolocation": {
+          "lat": "",
+          "long": ""
+        }
+      },
+      "phone": "",
+      "__v": "",
+      "role": "user",
       "id": 14
     }
   ],

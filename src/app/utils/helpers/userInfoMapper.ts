@@ -2,7 +2,6 @@ import { RawUserM, UserM } from "src/app/models/user";
 
 export const userInfoMapper = (user: RawUserM) => {
   const newUser: UserM = {
-    id: -1,
     email: user.email,
     username: user.username,
     password: user.password,

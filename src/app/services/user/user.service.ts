@@ -37,7 +37,7 @@ export class UserService {
    * @returns If the request is correct, it won't return nothing but a message in the console with the result. If there is an error, it will return null and an error message in the console
    */
   createUser(userData: UserM): Observable<UserM | null> {
-    return this.http.post<UserM>(this._urlLocalApi, {userData})
+    return this.http.post<UserM>(this._urlLocalApi, userData)
     .pipe(
       tap((result) => {
         console.log('User successfully created');
