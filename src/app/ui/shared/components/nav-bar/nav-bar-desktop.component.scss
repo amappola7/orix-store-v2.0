@@ -13,10 +13,11 @@
         width: fit-content;
         height: fit-content;
         padding: 0;
-        background-color: white;
         box-shadow: none;
+        background-color: transparent;
 
-        a {
+
+        a, button {
           font-size: 1.8rem;
           color: #000000;
           text-decoration: none;
@@ -30,7 +31,7 @@
   .home-colors {
     ul {
       li {
-        a {
+        a, button {
           color: white;
         }
       }
