@@ -4,6 +4,7 @@ import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-ico
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
 import { ShoppingCartItemM } from 'src/app/models/shopping-cart';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
@@ -27,7 +28,8 @@ export class ProductDetailsCardComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private shoppingCartService: ShoppingCartService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertsService: AlertsService
   ) { }
 
   ngOnInit(): void {
@@ -48,17 +50,11 @@ export class ProductDetailsCardComponent implements OnInit {
     if (this.quantity > 0) this.quantity -= 1;
   }
 
-  // openCartAlert(): void {
-  //   this._snackBar.open('Product added to cart', '', {
-  //     duration: 2500,
-  //   });
-  // }
-
   addProductToCart(id: number): void {
     this.productService.getProductById(id)
     .subscribe((product) => {
       this.shoppingCartService.addProduct(product!, this.quantity);
-      // this.openCartAlert();
+      this.alertsService.showSimpleAlert('Product added to cart', 'Done');
     })
   };
 }
