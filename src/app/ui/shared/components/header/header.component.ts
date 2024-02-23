@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'orix-header',
@@ -10,7 +12,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   iconMobileMenu: IconDefinition = faBars;
   screenSize: number = window.screen.width;
-  screenMode: boolean = true;
+  screenMode$!: Observable<boolean>;
+  screenMode!: boolean;
   logoToUse!: string;
   logos = {
     lightModeLogo: '../../../../../assets/logos/Logo Light Mode.png',
@@ -20,8 +23,14 @@ export class HeaderComponent implements OnInit {
   @Input() currentPage!: string;
   @Output() openMobileMenuNotification: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  constructor (
+    private store: Store<{screenMode: boolean}>
+  ) {}
+
   ngOnInit() {
     this.settingLogo();
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
   }
 
   settingLogo(): void {

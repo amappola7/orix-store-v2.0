@@ -2,7 +2,7 @@
   <orix-dark-mode-button (screenModeChange)="screenModeChange()"></orix-dark-mode-button>
 </section> -->
 <orix-header [currentPage]="'home'" (openMobileMenuNotification)="openMobileMenu()"></orix-header>
-<section class="home">
+<section class="home" [ngClass]="screenMode ? '': 'dark-mode'">
   <div class="welcome-banner">
     <orix-welcome-banner></orix-welcome-banner>
   </div>
