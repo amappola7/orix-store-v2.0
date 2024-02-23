@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class AdminProductsTableComponent {
   @Output() openModalNotification: EventEmitter<string> = new EventEmitter();
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private alertsService: AlertsService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +36,6 @@ export class AdminProductsTableComponent {
 
   deleteProduct(product: ProductM): void {
     this.productService.deleteProduct(product.id)
-    .subscribe(() => alert('Product successfully deleted'))
+    .subscribe(() => this.alertsService.showSimpleAlert('Product successfully deleted', 'Done'))
   }
 }

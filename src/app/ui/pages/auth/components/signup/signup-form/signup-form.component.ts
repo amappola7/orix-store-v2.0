@@ -5,6 +5,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { userInfoMapper } from 'src/app/utils/helpers/userInfoMapper';
 import { UniqueEmailValidator } from 'src/app/utils/validators/email-validator';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 
 @Component({
   selector: 'orix-signup-form',
@@ -19,7 +21,8 @@ export class SignupFormComponent {
     private userService: UserService,
     private uniqueEmailValidator: UniqueEmailValidator,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertsService: AlertsService
   ) {
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required, Validators.min(4)]],
@@ -76,8 +79,8 @@ export class SignupFormComponent {
       const formattedUserData = userInfoMapper(this.signUpForm.value);
       this.userService.createUser(formattedUserData)
       .subscribe((result) => {
-        alert('Success');
         this.authService.signUp(result!);
+        this.alertsService.showSimpleAlert('Successfully signed up', 'Done');
         this.router.navigate(['/home']);
       });
 

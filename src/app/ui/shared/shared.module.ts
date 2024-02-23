@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModalContainerComponent } from './components/modal-container/modal-container.component';
 import { LocationFormComponent } from './components/location-form/location-form.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
     FontAwesomeModule,
     SharedRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   exports: [
     ButtonComponent,

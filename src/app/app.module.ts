@@ -10,11 +10,11 @@ import { HomeModule } from './ui/pages/home/home.module';
 import { AuthModule } from './ui/pages/auth/auth.module';
 import { AdminModule } from './ui/pages/admin/admin.module';
 import { ShoppingCartModule } from './ui/pages/shopping-cart/shopping-cart.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SetHeadersInterceptor } from './interceptors/set-headers.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { SetHeadersInterceptor } from './interceptors/set-headers.interceptor';
     },
     {
       provide: HTTP_INTERCEPTORS, useClass: SetHeadersInterceptor, multi: true
-    }
+    },
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

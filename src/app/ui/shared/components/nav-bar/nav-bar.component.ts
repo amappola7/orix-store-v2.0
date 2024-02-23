@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Observable, map, of } from 'rxjs';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertsService: AlertsService
   ) {}
 
   ngOnInit(): void {
@@ -33,11 +35,11 @@ export class NavBarComponent implements OnInit {
 
   logout(): void {
     if(!this.authService.userIsAuthenticated()) {
-      alert('You\'re not logged in');
+      this.alertsService.showSimpleAlert('You\'re not logged in', 'Done');
       this.userStatus = false;
     } else {
       this.authService.logout();
-      alert('Logged out successfully');
+      this.alertsService.showSimpleAlert('Logged out successfully', 'Done');
       this.router.navigate(['/home']);
       this.userStatus = false;
     }

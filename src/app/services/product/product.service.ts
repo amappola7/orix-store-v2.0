@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of, take, tap } from 'rxjs';
 import { ProductM, RawProductM } from 'src/app/models/product';
 import { AuthService } from '../auth/auth.service';
+import { AlertsService } from '../alerts/alerts.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class ProductService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertsService: AlertsService
   ) { }
 
   getProducts(): Observable<ProductM[]> {
@@ -31,7 +33,7 @@ export class ProductService {
       return this.http.get<ProductM>(`${this._url}/${id}`).pipe(
         take(1),
         catchError((error) => {
-          alert('Product not found');
+          this.alertsService.showSimpleAlert('Product not found', 'Done');
           const voidProduct: ProductM = {
             id: 0,
             name: '',
@@ -45,7 +47,7 @@ export class ProductService {
         })
       )
     } else {
-      alert('You don\'t have access to see product details, please log in');
+      this.alertsService.showSimpleAlert('You don\'t have access to see product details, please log in', 'Done');
       return of(null);
     }
   }
@@ -62,7 +64,7 @@ export class ProductService {
         })
       )
     } else {
-      alert('You don\'t have access to create a product');
+      this.alertsService.showSimpleAlert('You don\'t have access to create a product', 'Done');
       return of(null);
     }
   }
@@ -78,7 +80,7 @@ export class ProductService {
         })
       )
     } else {
-      alert('You don\'t have access to edit a product');
+      this.alertsService.showSimpleAlert('You don\'t have access to edit a product', 'Done');
       return of(null);
     }
   }
@@ -94,7 +96,7 @@ export class ProductService {
         })
       )
     } else {
-      alert('You don\'t have access to delete a product');
+      this.alertsService.showSimpleAlert('You don\'t have access to delete a product', 'Done');
       return of(null);
     }
   }

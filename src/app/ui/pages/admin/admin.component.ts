@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductM } from 'src/app/models/product';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class AdminComponent {
   screenSize: number = window.screen.width;
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private alertsService: AlertsService
   ) { }
 
   openModal(actionInfo: string): void {
@@ -38,13 +40,13 @@ export class AdminComponent {
     if (this.modalMode == 'Create') {
       this.productService.createProduct(productData)
         .subscribe(() => {
-          alert('Product successfully created');
+          this.alertsService.showSimpleAlert('Product successfully created', 'Done');
           this.closeModal();
         })
     } else {
       this.productService.editProduct(productData)
         .subscribe(() => {
-          alert('Product successfully created');
+          this.alertsService.showSimpleAlert('Product successfully edited', 'Done');
           this.closeModal();
         })
     }
