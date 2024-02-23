@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { userInfoMapper } from 'src/app/utils/helpers/userInfoMapper';
 import { UniqueEmailValidator } from 'src/app/utils/validators/email-validator';
 
 @Component({
@@ -14,7 +17,9 @@ export class SignupFormComponent {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private uniqueEmailValidator: UniqueEmailValidator
+    private uniqueEmailValidator: UniqueEmailValidator,
+    private router: Router,
+    private authService: AuthService
   ) {
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required, Validators.min(4)]],
@@ -68,9 +73,12 @@ export class SignupFormComponent {
    */
   onSubmit() {
     if (this.signUpForm.valid) {
-      this.userService.createUser(this.signUpForm.value)
+      const formattedUserData = userInfoMapper(this.signUpForm.value);
+      this.userService.createUser(formattedUserData)
       .subscribe(() => {
-        console.log('Success');
+        alert('Success');
+        this.authService.signUp;
+        this.router.navigate(['/home']);
       });
 
       this.signUpForm.reset();

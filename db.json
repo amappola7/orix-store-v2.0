@@ -554,6 +554,20 @@
       },
       "phone": "1-104-001-6498",
       "__v": 0
+    },
+    {
+      "username": "k_stupidella",
+      "firstName": "Karla",
+      "secondName": "Melissa",
+      "surname": "Sandoval",
+      "secondSurname": "Fonseca",
+      "email": "ks@gmail.com",
+      "password": "#123asdf",
+      "address": {
+        "street": "Calle 99",
+        "zip": 12354
+      },
+      "id": 14
     }
   ],
   "shoppingCarts": [

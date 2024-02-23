@@ -13,17 +13,33 @@ export interface UserM {
 export interface Name {
   firstName: string,
   secondName?: string,
-  lastname: string,
-  lastname2?: string,
+  surname: string,
+  secondSurname?: string,
 }
 
 export interface Address {
-  city: string,
+  country?: string,
+  state?: string,
+  city?: string,
   street: string,
-  number: number,
+  number: number | null,
   zipCode: number,
   geolocation?: {
     lat: string,
     long: string,
+  }
+};
+
+export interface RawUserM {
+  "username": string,
+  "firstName": string,
+  "secondName": string,
+  "surname": string,
+  "secondSurname": "Fonseca",
+  "email": string,
+  "password": string,
+  "address": {
+    "street": string,
+    "zip": number
   }
 };

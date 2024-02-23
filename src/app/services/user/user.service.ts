@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, tap, take, map, of } from 'rxjs';
 import { UserM } from 'src/app/models/user';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class UserService {
   private _urlLocalApi: string = 'http://localhost:3000/users';
   private _urlExternalApi: string = 'https://fakestoreapi.com/users/';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   /**
    * Get users list from the local API
@@ -34,9 +37,11 @@ export class UserService {
    * @returns If the request is correct, it won't return nothing but a message in the console with the result. If there is an error, it will return null and an error message in the console
    */
   createUser(userData: UserM): Observable<UserM | null> {
-    return this.http.post<UserM>(this._urlLocalApi, userData)
+    return this.http.post<UserM>(this._urlLocalApi, {userData})
     .pipe(
-      tap(() => console.log('User successfully created')),
+      tap((result) => {
+        console.log('User successfully created');
+      }),
       catchError((error) => {
         console.log('Error creating user', error);
         return of(null);

@@ -43,6 +43,10 @@ export class AuthService {
     // );
   }
 
+  signUp(userData: UserM): void {
+    this.setAccessToken(userData);
+  }
+
   logout(): void {
     sessionStorage.removeItem('OX_access_token');
   }
