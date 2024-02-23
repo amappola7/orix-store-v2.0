@@ -30,31 +30,32 @@ export class ProductFormComponent implements OnInit {
     });
 
     this.productService.getCategories()
-    .subscribe((result) => {
-      this.categoriesList = result;
-    })
+      .subscribe((result) => {
+        this.categoriesList = result;
+      })
 
-    if(this.mode === 'Edit') this.fillForm(this.productService.productToEdit);
+    if (this.mode === 'Edit') this.fillForm(this.productService.productToEdit);
   };
 
   // onSubmit() {
-    // if(this.createEditProductForm.valid) {
-    //   this.productService.createProduct(this.createEditProductForm.value)
-    //   .subscribe(() => {
-    //     alert('Product successfully created');
-    //     this.createEditProductForm.reset();
-    //   })
-    // } else {
-    //   this.createEditProductForm.markAllAsTouched();
-    // }
+  // if(this.createEditProductForm.valid) {
+  //   this.productService.createProduct(this.createEditProductForm.value)
+  //   .subscribe(() => {
+  //     alert('Product successfully created');
+  //     this.createEditProductForm.reset();
+  //   })
+  // } else {
+  //   this.createEditProductForm.markAllAsTouched();
+  // }
   // }
 
   onSubmit(): void {
-    console.log('clickeando');
-    if(this.createEditProductForm.valid) {
+    if (this.createEditProductForm.valid) {
       this.submitForm.emit(this.createEditProductForm.value);
       this.createEditProductForm.reset();
-      console.log('clickeando');
+    } else if (this.mode === 'Edit') {
+      this.submitForm.emit(this.createEditProductForm.value);
+      this.createEditProductForm.reset();
     } else {
       this.createEditProductForm.markAllAsTouched();
     }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
@@ -18,6 +18,7 @@ export class AdminProductsTableComponent {
   };
   screenSize: number = window.screen.width;
 
+  @Input() changeInDataBaseNotification!: boolean;
   @Output() openModalNotification: EventEmitter<string> = new EventEmitter();
 
   constructor(
@@ -29,6 +30,10 @@ export class AdminProductsTableComponent {
     this.productList$ = this.productService.getProducts();
   }
 
+  ngOnChanges(): void {
+    this.productList$ = this.productService.getProducts();
+  }
+
   openModal(actionInfo: string, productData: ProductM): void {
     this.openModalNotification.emit(actionInfo);
     this.productService.fillForm(productData);
@@ -36,6 +41,9 @@ export class AdminProductsTableComponent {
 
   deleteProduct(product: ProductM): void {
     this.productService.deleteProduct(product.id)
-    .subscribe(() => this.alertsService.showSimpleAlert('Product successfully deleted', 'Done'))
+    .subscribe(() => {
+      this.alertsService.showSimpleAlert('Product successfully deleted', 'Done');
+      this.productList$ = this.productService.getProducts();
+    })
   }
 }

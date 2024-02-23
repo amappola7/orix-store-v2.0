@@ -4,7 +4,7 @@
     <h2>Products</h2>
     <button class="create-product__button" (click)="openModal('Create')">Create Product</button>
   </div>
-  <orix-admin-products-table (openModalNotification)="openModal($event)"></orix-admin-products-table>
+  <orix-admin-products-table [changeInDataBaseNotification]="changeInDataBaseNotification" (openModalNotification)="openModal($event)"></orix-admin-products-table>
 </section>
 <orix-footer></orix-footer>
 <div class="modal__container" *ngIf="displayModal">

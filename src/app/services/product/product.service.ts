@@ -69,9 +69,9 @@ export class ProductService {
     }
   }
 
-  editProduct(productData: RawProductM): Observable<ProductM | null> {
+  editProduct(productId: number, productData: ProductM): Observable<ProductM | null> {
     if (this.authService.userIsAuthenticated() && this.authService.getUserRole() === 'admin') {
-      return this.http.put<ProductM>(this._url, productData).pipe(
+      return this.http.put<ProductM>(`${this._url}/${productId}`, productData).pipe(
         take(1),
         tap(() => console.log('Product successfully edited')),
         catchError((error) => {
