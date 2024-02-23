@@ -37,7 +37,7 @@
             <button class="btn edit-icon" (click)="openModal('Edit', product)">
               <fa-icon [icon]="icons.editIcon"></fa-icon>
             </button>
-            <button class="btn delete-icon">
+            <button class="btn delete-icon" (click)="deleteProduct(product)">
               <fa-icon [icon]="icons.deleteIcon"></fa-icon>
             </button>
           </div>

@@ -31,4 +31,9 @@ export class AdminProductsTableComponent {
     this.openModalNotification.emit(actionInfo);
     this.productService.fillForm(productData);
   }
+
+  deleteProduct(product: ProductM): void {
+    this.productService.deleteProduct(product.id)
+    .subscribe(() => alert('Product successfully deleted'))
+  }
 }
