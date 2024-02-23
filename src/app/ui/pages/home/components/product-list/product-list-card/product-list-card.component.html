@@ -1,8 +1,13 @@
-<div class="card">
+<div class="card" [ngClass]="screenMode ? '' : 'dark-mode'">
   <div class="card-image__container">
     <img
       class="card-image__image"
-      [ngClass]="productInfo.name === 'John Hardy Women\'s Legends Naga Gold & Silver Dragon Station Chain Bracelet' ? 'shrink' : ''"
+      [ngClass]="
+        productInfo.name ===
+        'John Hardy Women\'s Legends Naga Gold & Silver Dragon Station Chain Bracelet'
+          ? 'shrink'
+          : ''
+      "
       [src]="productInfo.image"
       [alt]="productInfo.name"
       [title]="productInfo.name"
@@ -14,12 +19,19 @@
       <p class="card-information__price">{{ productInfo.price | currency }}</p>
     </div>
     <div class="card-information__buttons">
-      <a class="btn card-button" title="See details" routerLink="details/{{productInfo.id }}"
+      <a
+        class="btn card-button"
+        title="See details"
+        routerLink="details/{{ productInfo.id }}"
         ><span class="icon"
           ><fa-icon [icon]="icons.moreInfoIcon"></fa-icon></span
         ><span>Details</span></a
       >
-      <button class="btn card-button" title="Add to cart" (click)="addProductToCart(productInfo.id)">
+      <button
+        class="btn card-button"
+        title="Add to cart"
+        (click)="addProductToCart(productInfo.id)"
+      >
         <span class="icon"
           ><fa-icon [icon]="icons.shoppingCartIcon"></fa-icon></span
         ><span>Buy</span>
