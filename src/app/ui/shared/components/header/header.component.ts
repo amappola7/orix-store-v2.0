@@ -30,17 +30,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.settingLogo();
     this.screenMode$ = this.store.select('screenMode');
-    this.screenMode$.subscribe(mode => this.screenMode = mode);
+    this.screenMode$.subscribe(mode => {
+      this.screenMode = mode;
+      this.settingLogo();
+    });
   }
 
   settingLogo(): void {
-    if (this.screenSize > 768 && this.currentPage == 'home') {
-      this.logoToUse = this.logos.darkModeLogo;
-    } else if (this.screenMode) {
-      this.logoToUse = this.logos.lightModeLogo;
-    } else {
-      this.logoToUse = this.logos.darkModeLogo;
-    }
+    this.logoToUse = this.screenMode ? this.logos.lightModeLogo : this.logos.darkModeLogo;
+    if (this.screenSize > 768 && this.currentPage === 'home') this.logoToUse = this.logos.darkModeLogo;
   }
 
   openMobileMenu(): void {

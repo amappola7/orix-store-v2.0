@@ -1,7 +1,8 @@
 @import "../../../../../styles.scss";
 
 @include desktopQueries() {
-  .home-colors {
+  .homecolors {
     background-color: #000000;
+    color: white;
   }
 }

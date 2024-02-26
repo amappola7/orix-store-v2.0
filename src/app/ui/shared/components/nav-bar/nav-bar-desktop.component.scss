@@ -13,8 +13,8 @@
         width: fit-content;
         height: fit-content;
         padding: 0;
-        background-color: white;
         box-shadow: none;
+        background-color: transparent;
 
         a {
           font-size: 1.8rem;
@@ -26,8 +26,20 @@
 
   }
 
+  .darkmode {
+    ul {
+      li {
+        background-color: transparent;
+        border: none;
 
-  .home-colors {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .homecolors {
     ul {
       li {
         a {

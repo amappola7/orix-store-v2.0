@@ -1,6 +1,15 @@
-<header class="header" [ngClass]="currentPage == 'home' ? 'home-colors' : ''" [ngClass]="screenMode ? '': 'dark-mode'">
+<header
+  class="header"
+  [ngClass]="{
+    darkmode: !screenMode,
+    homecolors: currentPage === 'home'
+  }"
+>
   <div class="logo">
-    <img [src]="screenMode ? logos.lightModeLogo : logos.darkModeLogo" alt="Orix Ecommerce Logo">
+    <img
+      [src]="logoToUse"
+      alt="Orix Ecommerce Logo"
+    />
   </div>
   <div class="nav-bar__mobile" *ngIf="screenSize < 768">
     <button class="btn" (click)="openMobileMenu()">
@@ -8,6 +17,6 @@
     </button>
   </div>
   <div class="nav-bar__devices" *ngIf="screenSize > 768">
-    <orix-nav-bar currentPage="currentPage"></orix-nav-bar>
+    <orix-nav-bar [currentPage]="currentPage"></orix-nav-bar>
   </div>
 </header>

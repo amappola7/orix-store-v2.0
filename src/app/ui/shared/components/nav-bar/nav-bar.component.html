@@ -1,4 +1,10 @@
-<nav class="nav-bar" [ngClass]="currentPage == 'home' ? 'home-colors' : ''" [ngClass]="screenMode ? '': 'dark-mode'" >
+<nav
+  class="nav-bar"
+  [ngClass]="{
+    darkmode: !screenMode,
+    homecolors: currentPage === 'home'
+  }"
+>
   <ul>
     <li class="nav-bar-button">
       <a routerLink="/home" routerLinkActive="router-link-active">Home</a>
@@ -17,12 +23,13 @@
       >
     </li>
     <li *ngIf="userStatus" class="nav-bar-button">
-      <button (click)="logout()"
-        >Logout</button
-      >
+      <button (click)="logout()">Logout</button>
     </li>
     <li class="nav-bar-button">
-      <a class="shopping-cart__link" routerLink="/shopping-cart" routerLinkActive="router-link-active"
+      <a
+        class="shopping-cart__link"
+        routerLink="/shopping-cart"
+        routerLinkActive="router-link-active"
         ><fa-icon [icon]="cartIcon"></fa-icon
         ><span *ngIf="screenSize < 768">Shopping Cart</span></a
       >
