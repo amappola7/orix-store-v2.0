@@ -1,4 +1,4 @@
-<div class="modal-background">
+<div class="modal-background" [ngClass]="screenMode ? '': 'dark-mode'">
   <div class="close-modal__button-container">
     <button class="close-modal__button" (click)="closeModal()"><fa-icon [icon]="closeModalIcon"></fa-icon></button>
   </div>
