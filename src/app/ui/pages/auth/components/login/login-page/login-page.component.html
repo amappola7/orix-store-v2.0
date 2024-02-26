@@ -1,5 +1,5 @@
 <orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
-<section class="auth-page">
+<section class="auth-page" [ngClass]="screenMode ? '': 'dark-mode'">
   <orix-login-form></orix-login-form>
 </section>
 <orix-footer></orix-footer>

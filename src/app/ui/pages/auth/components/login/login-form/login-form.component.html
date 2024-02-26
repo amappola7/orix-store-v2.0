@@ -1,4 +1,4 @@
-<div class="login__form-container">
+<div class="login__form-container" [ngClass]="screenMode ? '': 'dark-mode'">
   <form class="login__form" [formGroup]="loginForm" (click)="onSubmit()">
     <h2>Login</h2>
     <div class="control-container">
