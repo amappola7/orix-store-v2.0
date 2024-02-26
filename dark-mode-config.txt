@@ -1,7 +1,7 @@
 [ngClass]="screenMode ? '': 'dark-mode'"
 
 screenMode$!: Observable<boolean>;
-  screenMode!: boolean;
+screenMode!: boolean;
 
 constructor(
   private store: Store<{screenMode: boolean}>

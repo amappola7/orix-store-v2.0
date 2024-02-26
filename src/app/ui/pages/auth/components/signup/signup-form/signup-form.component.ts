@@ -7,6 +7,8 @@ import { userInfoMapper } from 'src/app/utils/helpers/userInfoMapper';
 import { UniqueEmailValidator } from 'src/app/utils/validators/email-validator';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { AlertsService } from 'src/app/services/alerts/alerts.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'orix-signup-form',
@@ -15,6 +17,8 @@ import { AlertsService } from 'src/app/services/alerts/alerts.service';
 })
 export class SignupFormComponent {
   signUpForm!: FormGroup;
+  screenMode$!: Observable<boolean>;
+screenMode!: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -22,7 +26,8 @@ export class SignupFormComponent {
     private uniqueEmailValidator: UniqueEmailValidator,
     private router: Router,
     private authService: AuthService,
-    private alertsService: AlertsService
+    private alertsService: AlertsService,
+    private store: Store<{screenMode: boolean}>
   ) {
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required, Validators.min(4)]],
@@ -69,6 +74,11 @@ export class SignupFormComponent {
         zip: ['', [Validators.pattern(/^\d{5}$/)]],
       }),
     });
+  }
+
+  ngOnInit(): void {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
   }
 
   /**

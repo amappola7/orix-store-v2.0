@@ -46,10 +46,47 @@
       }
     }
 
-
-
     .street__control {
       margin-bottom: 1.5rem;
     }
+  }
+}
+
+.dark-mode {
+  .signup__form {
+    background-color: $dark-mode;
+    border: solid 0.1rem $grey-color;
+
+    h2 {
+      color: white;
+    }
+
+    .control-container {
+      .control-container__inputs {
+        .lbl {
+          color: white;
+        }
+
+        .ipt {
+          color: white;
+          border: solid 0.1rem $grey-color;
+          background-color: $dark-mode;
+        }
+      }
+
+      .errors-list {
+        color: white;
+      }
+    }
+
+    .invalid-credentials {
+      color: white;
+    }
+  }
+
+  .btn {
+    border: solid 0.1rem $grey-color;
+    color: white;
+    background-color: $dark-mode;
   }
 }
