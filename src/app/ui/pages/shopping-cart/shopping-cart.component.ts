@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ShoppingCartItemM } from 'src/app/models/shopping-cart';
+import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
@@ -11,6 +14,8 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 export class ShoppingCartComponent {
   displayMobileMenu: boolean = false;
   screenSize: number = window.screen.width;
+  screenMode$!: Observable<boolean>;
+screenMode!: boolean;
   cart: ShoppingCartItemM[] = [];
   productsInCart: number[] = [];
   totalCart: number = 0;
@@ -20,13 +25,17 @@ export class ShoppingCartComponent {
   };
 
   constructor(
-    private shoppingCartService: ShoppingCartService
+    private shoppingCartService: ShoppingCartService,
+    private store: Store<{screenMode: boolean}>,
+    private alertsService: AlertsService
   ) {}
 
   ngOnInit() {
     this.cart = this.shoppingCartService.cart;
     this.productsInCart = this.shoppingCartService.productsInCart;
     this.totalCart = this.shoppingCartService.calculateTotalInCart();
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
   }
 
   ngOnDestroy() {
@@ -58,9 +67,7 @@ export class ShoppingCartComponent {
     this.totalCart = this.shoppingCartService.calculateTotalInCart();
   }
 
-  // checkoutAlert(): void {
-  //   this._snackBar.open('This page is under construction', 'Done', {
-  //     duration: 2500,
-  //   });
-  // }
+  checkoutAlert(): void {
+    this.alertsService.showSimpleAlert('This page is under construction', 'Done');
+  }
 }
