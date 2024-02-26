@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product/product.service';
 
@@ -11,16 +13,21 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class ProductFormComponent implements OnInit {
   createEditProductForm!: FormGroup;
   categoriesList!: string[];
+  screenMode$!: Observable<boolean>;
+screenMode!: boolean;
 
   @Input() mode!: string;
   @Output() submitForm: EventEmitter<ProductM> = new EventEmitter<ProductM>();
 
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService
+    private productService: ProductService,
+    private store: Store<{screenMode: boolean}>
   ) { }
 
   ngOnInit() {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
     this.createEditProductForm = this.fb.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
