@@ -27,7 +27,7 @@
     }
 
     .shrink {
-      width: 60%
+      width: 60%;
     }
   }
 
@@ -67,6 +67,36 @@
 
         .icon {
           font-size: 1.6rem;
+          color: $grey-color;
+        }
+
+        span {
+          @include displayFlex(row, center, center);
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  @include displayFlex(column, flex-start, center);
+  background-color: $dark-mode;
+  border: solid 0.1rem $grey-color;
+
+  .card-information {
+    .card-information__container {
+      color: white;
+
+      .card-information__price {
+        color: $grey-color-variation;
+      }
+    }
+
+    .card-information__buttons {
+      .card-button {
+        color: white;
+
+        .icon {
           color: $grey-color;
         }
 

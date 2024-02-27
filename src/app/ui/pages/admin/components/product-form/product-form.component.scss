@@ -37,3 +37,35 @@
     }
   }
 }
+
+.dark-mode {
+  h2 {
+    color: white
+  }
+
+  form {
+    .control-container {
+      .controls {
+        .lbl {
+          color: white;
+        }
+
+        .ipt {
+          border: solid 0.1rem $grey-color;
+          color: white;
+          background-color: $dark-mode;
+        }
+      }
+
+      .errors-list {
+        color: white;
+      }
+    }
+
+    .btn {
+      border: solid 0.1rem $grey-color;
+      color: white;
+      background-color: $dark-mode;
+    }
+  }
+}

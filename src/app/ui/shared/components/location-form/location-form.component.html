@@ -1,4 +1,4 @@
-<form class="location__form" [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+<form class="location__form" [ngClass]="screenMode ? '': 'dark-mode'" [formGroup]="locationForm" (ngSubmit)="onSubmit()">
   <div class="control-container">
     <div class="control-container__inputs">
       <label class="lbl" for="country">Country</label>

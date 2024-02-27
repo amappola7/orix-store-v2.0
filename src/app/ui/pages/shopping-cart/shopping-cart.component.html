@@ -1,4 +1,4 @@
-<div class="shopping-cart__page">
+<div class="shopping-cart__page" [ngClass]="screenMode ? '': 'dark-mode'">
   <orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
   <section class="shopping-cart__section">
     <div class="shopping-cart__title">
@@ -46,7 +46,7 @@
           <h2>Summary</h2>
           <p>Total {{ totalCart | currency }}</p>
         </div>
-        <button class="btn">Check out</button>
+        <button class="btn" (click)="checkoutAlert()">Check out</button>
       </div>
     </div>
   </section>

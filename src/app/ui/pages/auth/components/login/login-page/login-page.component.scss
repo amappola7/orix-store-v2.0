@@ -4,3 +4,7 @@
   width: 100vw;
   @include heightCalcNoHeaderNoFooter(100vh);
 }
+
+.dark-mode {
+  background-color: $dark-mode;
+}

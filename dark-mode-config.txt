@@ -1,0 +1,15 @@
+// Dark mode config template
+
+[ngClass]="screenMode ? '': 'dark-mode'"
+
+screenMode$!: Observable<boolean>;
+screenMode!: boolean;
+
+constructor(
+  private store: Store<{screenMode: boolean}>
+) {}
+
+ngOnInit(): void {
+  this.screenMode$ = this.store.select('screenMode');
+  this.screenMode$.subscribe(mode => this.screenMode = mode);
+}

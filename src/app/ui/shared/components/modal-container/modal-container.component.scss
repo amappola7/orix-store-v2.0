@@ -38,3 +38,20 @@
     background-color: white;
   }
 }
+
+.dark-mode {
+  background-color: $modal-background-color-dark-mode;
+
+  .close-modal__button-container {
+    .close-modal__button {
+      border: solid 0.1rem $grey-color;
+      color: white;
+      background-color: $dark-mode;
+    }
+  }
+
+  .modal-content__container {
+    border: solid 0.1rem $grey-color;
+    background-color: $dark-mode;
+  }
+}

@@ -66,3 +66,26 @@
     }
   }
 }
+
+.dark-mode {
+  .products-table {
+    color: white;
+
+    thead {
+      border-radius: 1.05rem;
+      background-color: $dark-mode-variation;
+    }
+
+    tbody {
+      .row {
+        background-color: $dark-mode-variation;
+
+        .td-options {
+          button {
+            color: $grey-color-variation;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'orix-signup-page',
@@ -8,6 +10,17 @@ import { Component } from '@angular/core';
 export class SignupPageComponent {
   displayMobileMenu: boolean = false;
   screenSize: number = window.screen.width;
+  screenMode$!: Observable<boolean>;
+  screenMode!: boolean;
+
+  constructor(
+    private store: Store<{ screenMode: boolean }>
+  ) { }
+
+  ngOnInit(): void {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
+  }
 
   openMobileMenu(): void {
     this.displayMobileMenu = true;

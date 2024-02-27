@@ -1,4 +1,4 @@
-@import '../../../../../../../styles.scss';
+@import "../../../../../../../styles.scss";
 
 .product-details__page {
   width: 98.9vw;
@@ -7,4 +7,8 @@
     width: 100%;
     @include heightCalcNoHeader(100vh);
   }
+}
+
+.dark-mode {
+  background-color: $dark-mode;
 }

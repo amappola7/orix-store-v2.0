@@ -1,4 +1,4 @@
-<div class="product-form__container">
+<div class="product-form__container" [ngClass]="screenMode ? '': 'dark-mode'">
   <h2>{{mode}}</h2>
   <form [formGroup]="createEditProductForm" (ngSubmit)="onSubmit()">
     <div class="name__control control-container">

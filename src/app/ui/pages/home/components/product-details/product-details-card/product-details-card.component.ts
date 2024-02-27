@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductM } from 'src/app/models/product';
 import { ShoppingCartItemM } from 'src/app/models/shopping-cart';
@@ -24,15 +25,20 @@ export class ProductDetailsCardComponent implements OnInit {
   cart: ShoppingCartItemM[] = [];
   totalCart: number = 0;
   quantity: number = 1;
+  screenMode$!: Observable<boolean>;
+  screenMode!: boolean;
 
   constructor(
     private productService: ProductService,
     private shoppingCartService: ShoppingCartService,
     private route: ActivatedRoute,
-    private alertsService: AlertsService
+    private alertsService: AlertsService,
+    private store: Store<{ screenMode: boolean }>
   ) { }
 
   ngOnInit(): void {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
     this.route.params
       .subscribe((params) => {
         this.productId = params['id'];
@@ -52,10 +58,10 @@ export class ProductDetailsCardComponent implements OnInit {
 
   addProductToCart(id: number): void {
     this.productService.getProductById(id)
-    .subscribe((product) => {
-      this.shoppingCartService.addProduct(product!, this.quantity);
-      this.alertsService.showSimpleAlert('Product added to cart', 'Done');
-    })
+      .subscribe((product) => {
+        this.shoppingCartService.addProduct(product!, this.quantity);
+        this.alertsService.showSimpleAlert('Product added to cart', 'Done');
+      })
   };
 }
 

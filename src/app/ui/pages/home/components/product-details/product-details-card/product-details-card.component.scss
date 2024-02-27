@@ -75,3 +75,30 @@
     }
   }
 }
+
+.dark-mode {
+  .product-info {
+    color: white;
+
+    .product-info__price {
+      color: $grey-color-variation;
+    }
+
+    .product-info__buttons {
+      .quantity {
+        border: solid 0.1rem $grey-color;
+        color: white;
+        background-color: $dark-mode;
+      }
+
+      .add-to-cart {
+        color: white;
+
+        .icon {
+          font-size: 2rem;
+          color: $grey-color-variation;
+        }
+      }
+    }
+  }
+}

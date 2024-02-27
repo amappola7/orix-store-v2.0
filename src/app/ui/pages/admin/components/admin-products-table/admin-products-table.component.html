@@ -1,4 +1,4 @@
-<div class="admin-table__container">
+<div class="admin-table__container" [ngClass]="screenMode ? '': 'dark-mode'">
   <table class="products-table">
     <thead>
       <tr>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of productList$ | async">
+      <tr class="row" *ngFor="let product of productList$ | async">
         <td class="td td-image" *ngIf="screenSize > 768">
           <div class="image-container">
             <span

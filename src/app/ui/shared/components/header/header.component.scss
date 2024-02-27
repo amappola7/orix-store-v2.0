@@ -19,3 +19,13 @@
     }
   }
 }
+
+.darkmode {
+  background-color: $dark-mode;
+
+  .nav-bar__mobile {
+    .btn {
+      color: white;
+    }
+  }
+}

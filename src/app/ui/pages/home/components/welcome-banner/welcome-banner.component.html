@@ -1,18 +1,30 @@
-<div class="welcome-banner">
-  <div class="welcome-banner__media-container__desktop" *ngIf="screenSize > 768">
+<div class="welcome-banner" [ngClass]="screenMode ? '' : 'dark-mode'">
+  <div
+    class="welcome-banner__media-container__desktop"
+    *ngIf="screenSize > 768"
+  >
     <video class="welcome-video" loop autoplay [volume]="0">
-      <source src="../../../../../../assets/welcome-video.mp4" type="video/mp4">
+      <source
+        src="../../../../../../assets/welcome-video.mp4"
+        type="video/mp4"
+      />
       Your browser does not support this video
     </video>
   </div>
-  <div class="welcome-banner__media-container__mobile" *ngIf="screenSize <= 768">
-  </div>
+  <div
+    class="welcome-banner__media-container__mobile"
+    *ngIf="screenSize <= 768"
+  ></div>
   <div class="welcome-banner__content">
     <span class="content-a">
-      <h2>Orix.<br/><span>The best way to buy the products you love.</span></h2>
+      <h2>
+        Orix.<br /><span>The best way to buy the products you love.</span>
+      </h2>
     </span>
     <span class="content-b">
-      <a href="#home-content"><button class="btn"><fa-icon [icon]="arrowIcon"></fa-icon></button></a>
+      <a href="#home-content"
+        ><button class="btn"><fa-icon [icon]="arrowIcon"></fa-icon></button
+      ></a>
     </span>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <orix-header (openMobileMenuNotification)="openMobileMenu()"></orix-header>
-<section class="admin-table">
+<section class="admin-table" [ngClass]="screenMode ? '': 'dark-mode'">
   <div class="create-product__container">
     <h2>Products</h2>
     <button class="create-product__button" (click)="openModal('Create')">Create Product</button>

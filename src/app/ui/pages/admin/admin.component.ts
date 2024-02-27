@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ProductM, RawProductM } from 'src/app/models/product';
 import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { ProductService } from 'src/app/services/product/product.service';
@@ -14,11 +16,19 @@ export class AdminComponent {
   displayMobileMenu: boolean = false;
   screenSize: number = window.screen.width;
   changeInDataBaseNotification: boolean = false;
+  screenMode$!: Observable<boolean>;
+screenMode!: boolean;
 
   constructor(
     private productService: ProductService,
-    private alertsService: AlertsService
+    private alertsService: AlertsService,
+    private store: Store<{screenMode: boolean}>
   ) { }
+
+  ngOnInit(): void {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
+  }
 
   openModal(actionInfo: string): void {
     this.displayModal = true;

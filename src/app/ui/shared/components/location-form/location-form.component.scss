@@ -29,3 +29,26 @@
     }
   }
 }
+
+.dark-mode {
+  .control-container {
+    .control-container__inputs {
+      @include displayFlex(row, flex-start, center);
+      width: 100%;
+
+      .lbl {
+        color: white;
+      }
+
+      .ipt {
+        color: white;
+        border: solid 0.1rem $grey-color;
+        background-color: $dark-mode;
+      }
+    }
+
+    .errors-list {
+      color: white;
+    }
+  }
+}

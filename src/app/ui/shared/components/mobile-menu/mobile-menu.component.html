@@ -1,4 +1,4 @@
-<div class="mobile-menu__container">
+<div class="mobile-menu__container" [ngClass]="screenMode ? '': 'dark-mode'"  >
   <div class="close-mobile-menu__button-container">
     <button class="close-mobile-menu__button" (click)="closeMobileMenu()"><fa-icon [icon]="closeModalIcon"></fa-icon></button>
   </div>
