@@ -9,6 +9,7 @@
     <img
       [src]="logoToUse"
       alt="Orix Ecommerce Logo"
+      (click)="navigateToHome()"
     />
   </div>
   <div class="nav-bar__mobile" *ngIf="screenSize < 768">

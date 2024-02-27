@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
   @Output() openMobileMenuNotification: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor (
-    private store: Store<{screenMode: boolean}>
+    private store: Store<{screenMode: boolean}>,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -43,6 +45,10 @@ export class HeaderComponent implements OnInit {
 
   openMobileMenu(): void {
     this.openMobileMenuNotification.emit(true);
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/home']);
   }
 
 }
