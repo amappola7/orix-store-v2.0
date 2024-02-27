@@ -26,6 +26,11 @@ export class DarkModeButtonComponent {
     this.screenMode$ = store.select('screenMode');
   }
 
+  ngOnInit(): void {
+    this.screenMode$ = this.store.select('screenMode');
+    this.screenMode$.subscribe(mode => this.screenMode = mode);
+  }
+
   onChangeScreenMode(event: Event): void {
     this.store.dispatch(this.screenMode ? darkMode() : lightMode());
     this.screenMode$.subscribe(mode => this.screenMode = mode);
