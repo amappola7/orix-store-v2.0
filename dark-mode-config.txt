@@ -1,3 +1,5 @@
+// Dark mode config template
+
 [ngClass]="screenMode ? '': 'dark-mode'"
 
 screenMode$!: Observable<boolean>;
