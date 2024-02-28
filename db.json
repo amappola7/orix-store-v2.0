@@ -233,20 +233,20 @@
       }
     },
     {
-      "name": "Portátil Lenovo Intel Core I5 8GB 512GB Ideapad Slim 5 14\" Gris",
-      "description": "Es liviana, es compacta, es la ASUS Vivobook Go 15 y está diseñada para que seas productivo y te mantengas entretenido dondequiera que vayas. Con su bisagra plana de 180°, el protector físico de la cámara web y un montón de características de diseño bien pensadas, incluida una hermosa pantalla con bordes ultradelgados, ¡Vivobook Go 15 es la laptop que te permite hacer todo!",
-      "category": "electronics",
-      "price": 563,
-      "image": "https://jumbocolombiaio.vtexassets.com/arquivos/ids/541468-1600-1600?v=638343555951100000&width=1600&height=1600&aspect=true",
-      "id": 21
-    },
-    {
       "name": "Celular Motorola G84 256GB Viva Magenta",
       "description": "Altavoces estéreo Dolby Atmos® Pantalla pOLED DCI-P3 Con Conexión 5G navega mucho más rápido fabricado con materiales que simulan la calidad del cuero",
       "category": "electronics",
-      "price": 122.87,
+      "price": 320,
       "image": "https://jumbocolombiaio.vtexassets.com/arquivos/ids/534174-1600-1600?v=638332570272400000&width=1600&height=1600&aspect=true",
       "id": 22
+    },
+    {
+      "name": "iPhone 15 Pro",
+      "description": "6.1-inch Super Retina XDR display footnote ¹ featuring ProMotion, Always-On, and Dynamic Island",
+      "category": "electronics",
+      "price": 500.23,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone15pro-digitalmat-gallery-1-202309_GEO_US?wid=364&hei=333&fmt=png-alpha&.v=1693346851451",
+      "id": 23
     }
   ],
   "users": [
@@ -635,6 +635,33 @@
       "__v": "",
       "role": "user",
       "id": 16
+    },
+    {
+      "email": "morita@gmail.com",
+      "username": "morita123",
+      "password": "#123asdf",
+      "name": {
+        "firstName": "Mora",
+        "secondName": "",
+        "surname": "Perez",
+        "secondSurname": ""
+      },
+      "address": {
+        "country": "Colombia",
+        "state": "Boyacá",
+        "city": "Tunja",
+        "street": "Calle 99",
+        "number": null,
+        "zipCode": 21212,
+        "geolocation": {
+          "lat": "",
+          "long": ""
+        }
+      },
+      "phone": "",
+      "__v": "",
+      "role": "user",
+      "id": 17
     }
   ],
   "shoppingCarts": [],
